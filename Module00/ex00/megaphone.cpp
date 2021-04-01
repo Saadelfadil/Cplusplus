@@ -1,7 +1,7 @@
 #include <iostream>
 
 std::string toUppercase(std::string str) {
-    int i = 0;
+    size_t i = 0;
     while (i < str.length()) {
         if (str[i] >= 'a' && str[i] <= 'z'){
             str[i] -= 32;

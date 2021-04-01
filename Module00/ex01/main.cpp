@@ -1,5 +1,6 @@
 #include <iostream>
 #include "main.hpp"
+#include <iomanip>
 
 MyContact::MyContact()
 {
@@ -35,50 +36,129 @@ void MyContact::print_list_contact()
 
 int add_Contact(MyContact *list_contact, int i)
 {
-    std::cout << "Enter first name : ";
-    std::cin >> list_contact[i].firstName;
-    std::cout << "Enter last name : ";
-    std::cin >> list_contact[i].lastName;
-    std::cout << "Enter nickName : ";
-    std::cin >> list_contact[i].nickName;
-    std::cout << "Enter login : ";
-    std::cin >> list_contact[i].login;
-    std::cout << "Enter postalAddress : ";
-    std::cin >> list_contact[i].postalAddress;
-    std::cout << "Enter emailAddress : ";
-    std::cin >> list_contact[i].emailAddress;
-    std::cout << "Enter phoneNumber : ";
-    std::cin >> list_contact[i].phoneNumber;
-    std::cout << "Enter BirthdayDate : ";
-    std::cin >> list_contact[i].BirthdayDate;
-    std::cout << "Enter favoriteMeal : ";
-    std::cin >> list_contact[i].favoriteMeal;
-    std::cout << "Enter underwearColor : ";
-    std::cin >> list_contact[i].underwearColor;
-    std::cout << "Enter darkestSecret : ";
-    std::cin >> list_contact[i].darkestSecret;
+    if (i < 8)
+    {
+        std::cout << "Enter first name : ";
+        std::cin >> list_contact[i].firstName;
+        std::cout << "Enter last name : ";
+        std::cin >> list_contact[i].lastName;
+        std::cout << "Enter nickName : ";
+        std::cin >> list_contact[i].nickName;
+        std::cout << "Enter login : ";
+        std::cin >> list_contact[i].login;
+        std::cout << "Enter postalAddress : ";
+        std::cin >> list_contact[i].postalAddress;
+        std::cout << "Enter emailAddress : ";
+        std::cin >> list_contact[i].emailAddress;
+        std::cout << "Enter phoneNumber : ";
+        std::cin >> list_contact[i].phoneNumber;
+        std::cout << "Enter BirthdayDate : ";
+        std::cin >> list_contact[i].BirthdayDate;
+        std::cout << "Enter favoriteMeal : ";
+        std::cin >> list_contact[i].favoriteMeal;
+        std::cout << "Enter underwearColor : ";
+        std::cin >> list_contact[i].underwearColor;
+        std::cout << "Enter darkestSecret : ";
+        std::cin >> list_contact[i].darkestSecret;
+    }
+    else
+    {
+        std::cout << "You Can't Entre More Than 8 Contacts!" << std::endl;
+		return 0;
+    }
     return (i + 1);
+}
+
+void	parse(std::string info, int len)
+{
+	char word[11];
+	int sp;
+	int i = 0;
+	int j = 0;
+	sp = 10 - len;
+	while(i < sp)
+	{
+		word[i]=' ';
+		i++;
+	}
+	sp = 10 - sp;
+	while(sp)
+	{
+		word[i]=info[j];
+		j++;
+		i++;
+		sp--;
+	}
+	std::cout << word << "|";
+}
+
+void trunc(std::string info)
+{
+	char word[11];
+	int i = 0;
+	while (i < 10)
+	{
+		word[i] = info[i];
+		i++;
+	}
+	word[9] = '.';
+	word[10] = '\0';
+	std::cout << word << "|";
+}
+
+void print(MyContact *list_contact, int y)
+{
+    int len;
+    std::cout.width(10);
+    std::cout << std::right << y << "|";
+    if ((len = list_contact[y].firstName.length()) <= 10)
+        parse(list_contact[y].firstName, len);
+    else
+        trunc(list_contact[y].firstName);
+    if ((len = list_contact[y].lastName.length()) <= 10)
+        parse(list_contact[y].lastName, len);
+    else
+        trunc(list_contact[y].lastName);
+    if ((len = list_contact[y].login.length()) <= 10)
+        parse(list_contact[y].login, len);
+    else
+        trunc(list_contact[y].login);
+    std::cout << std::endl;
+}
+
+void intro_bar()
+{
+    std::cout.width(11);
+    std::cout << std::right << "Index|";
+    std::cout.width(11);
+    std::cout<<std::right << "First name|";
+    std::cout.width(11);
+    std::cout<<std::right << "Last name|";
+    std::cout.width(11);
+    std::cout<<std::right << "Nickname|" << std::endl;
 }
 
 void print_Contact(MyContact *list_contact, int i)
 {
     int y = 0;
     int cmd;
-
+    intro_bar();
     while (y < i)
     {
-        std::cout << y << " | "<<list_contact[y].firstName<< " | "<<list_contact[y].lastName<< " | "<<list_contact[y].login<< std::endl;
+        print(list_contact, y);
         y++;
     }
     std::cout << "Index : ";
 	std::cin >> cmd;
-    std::cout << std::endl;
-    list_contact[cmd].print_list_contact();
+    if (cmd < 8)
+        list_contact[cmd].print_list_contact();
+    else if (cmd > 8)
+        std::cout << "Index not found! please give index between 0 and 7" << std::endl;
 }
 
 int main()
 {
-    MyContact list_contact[7];
+    MyContact list_contact[8];
     int i = 0;
     std::string cmd;
 
