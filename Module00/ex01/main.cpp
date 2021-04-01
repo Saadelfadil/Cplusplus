@@ -1,6 +1,7 @@
 #include <iostream>
 #include "main.hpp"
 #include <iomanip>
+#include <cstdlib>
 
 MyContact::MyContact()
 {
@@ -39,27 +40,27 @@ int add_Contact(MyContact *list_contact, int i)
     if (i < 8)
     {
         std::cout << "Enter first name : ";
-        std::cin >> list_contact[i].firstName;
+        getline(std::cin, list_contact[i].firstName);
         std::cout << "Enter last name : ";
-        std::cin >> list_contact[i].lastName;
+        getline(std::cin, list_contact[i].lastName);
         std::cout << "Enter nickName : ";
-        std::cin >> list_contact[i].nickName;
+        getline(std::cin, list_contact[i].nickName);
         std::cout << "Enter login : ";
-        std::cin >> list_contact[i].login;
+        getline(std::cin, list_contact[i].login);
         std::cout << "Enter postalAddress : ";
-        std::cin >> list_contact[i].postalAddress;
+        getline(std::cin, list_contact[i].postalAddress);
         std::cout << "Enter emailAddress : ";
-        std::cin >> list_contact[i].emailAddress;
+        getline(std::cin, list_contact[i].emailAddress);
         std::cout << "Enter phoneNumber : ";
-        std::cin >> list_contact[i].phoneNumber;
+        getline(std::cin, list_contact[i].phoneNumber);
         std::cout << "Enter BirthdayDate : ";
-        std::cin >> list_contact[i].BirthdayDate;
+        getline(std::cin, list_contact[i].BirthdayDate);
         std::cout << "Enter favoriteMeal : ";
-        std::cin >> list_contact[i].favoriteMeal;
+        getline(std::cin, list_contact[i].favoriteMeal);
         std::cout << "Enter underwearColor : ";
-        std::cin >> list_contact[i].underwearColor;
+        getline(std::cin, list_contact[i].underwearColor);
         std::cout << "Enter darkestSecret : ";
-        std::cin >> list_contact[i].darkestSecret;
+        getline(std::cin, list_contact[i].darkestSecret);
     }
     else
     {
@@ -131,17 +132,31 @@ void intro_bar()
     std::cout.width(11);
     std::cout << std::right << "Index|";
     std::cout.width(11);
-    std::cout<<std::right << "First name|";
+    std::cout << std::right << "First name|";
     std::cout.width(11);
-    std::cout<<std::right << "Last name|";
+    std::cout << std::right << "Last name|";
     std::cout.width(11);
-    std::cout<<std::right << "Nickname|" << std::endl;
+    std::cout << std::right << "Nickname|" << std::endl;
+}
+
+int string_isdigit(std::string str)
+{
+    size_t i = 0;
+    while (i < str.length())
+    {
+        if (isdigit(str[i]))
+            i++;
+        else
+            return (0);
+    }
+    return (1);
 }
 
 void print_Contact(MyContact *list_contact, int i)
 {
     int y = 0;
-    int cmd;
+    std::string cmd;
+    int index = 0;
     intro_bar();
     while (y < i)
     {
@@ -149,10 +164,14 @@ void print_Contact(MyContact *list_contact, int i)
         y++;
     }
     std::cout << "Index : ";
-	std::cin >> cmd;
-    if (cmd < 8)
-        list_contact[cmd].print_list_contact();
-    else if (cmd > 8)
+	getline(std::cin, cmd);
+    if (string_isdigit(cmd))
+        index = stoi(cmd);
+    else if (!string_isdigit(cmd))
+        std::cout << "Index error can you give a digit please" << std::endl;
+    else if (index < 8)
+        list_contact[index].print_list_contact();
+    else if (index > 8)
         std::cout << "Index not found! please give index between 0 and 7" << std::endl;
 }
 
@@ -165,7 +184,7 @@ int main()
     while (1)
     {
         std::cout << "Command : ";
-		std::cin >> cmd;
+		getline(std::cin, cmd);
         if (cmd == "EXIT")
             exit(0);
         else if (cmd == "ADD")
