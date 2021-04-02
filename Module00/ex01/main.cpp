@@ -179,7 +179,7 @@ void print_Contact(MyContact *list_contact, int i)
 	getline(std::cin, cmd);
     if (string_isdigit(cmd))
         index = stoi(cmd);
-    else if (!string_isdigit(cmd))
+    if (!string_isdigit(cmd))
         std::cout << "Index error can you give a digit please" << std::endl;
     else if (index < 8)
         list_contact[index].print_list_contact();
