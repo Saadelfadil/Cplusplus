@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:38:40 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/04/02 15:38:41 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/04/03 17:39:18 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,106 +17,100 @@
 
 MyContact::MyContact()
 {
-    
+
     this->firstName = "";
-	this->lastName = "";
-	this->nickName = "";
-	this->login = "";
-	this->postalAddress = "";
-	this->emailAddress = "";
-	this->phoneNumber = "";
-	this->BirthdayDate = "";
-	this->favoriteMeal = "";
-	this->underwearColor = "";
-	this->darkestSecret = "";
-}
-
-void MyContact::print_list_contact()
-{
-
-    std::cout << "First Name : " << this->firstName << std::endl;
-	std::cout << "Last Name : " << this->lastName << std::endl;
-	std::cout << "Nickname : " << this->nickName << std::endl;
-	std::cout << "Login : " << this->login << std::endl;
-	std::cout << "Postal Adress : " << this->postalAddress << std::endl;
-	std::cout << "Email : " << this->emailAddress << std::endl;
-	std::cout << "Phone Number : " << this->phoneNumber << std::endl;
-	std::cout << "Birthday : " << this->BirthdayDate << std::endl;
-	std::cout << "Favorite Meal : " << this->favoriteMeal << std::endl;
-	std::cout << "Underwear Color : " << this->underwearColor << std::endl;
-	std::cout << "Darkest Secret : " << this->darkestSecret << std::endl;
+    this->lastName = "";
+    this->nickName = "";
+    this->login = "";
+    this->postalAddress = "";
+    this->emailAddress = "";
+    this->phoneNumber = "";
+    this->BirthdayDate = "";
+    this->favoriteMeal = "";
+    this->underwearColor = "";
+    this->darkestSecret = "";
 }
 
 int add_Contact(MyContact *list_contact, int i)
 {
+    std::string tmp;
     if (i < 8)
     {
         std::cout << "Enter first name : ";
-        getline(std::cin, list_contact[i].firstName);
+        getline(std::cin, tmp);
+        list_contact[i].SetfirstName(tmp);
         std::cout << "Enter last name : ";
-        getline(std::cin, list_contact[i].lastName);
+        getline(std::cin, tmp);
+        list_contact[i].SetlastName(tmp);
         std::cout << "Enter nickName : ";
-        getline(std::cin, list_contact[i].nickName);
+        getline(std::cin, tmp);
+        list_contact[i].SetnickName(tmp);
         std::cout << "Enter login : ";
-        getline(std::cin, list_contact[i].login);
+        getline(std::cin, tmp);
+        list_contact[i].Setlogin(tmp);
         std::cout << "Enter postalAddress : ";
-        getline(std::cin, list_contact[i].postalAddress);
+        getline(std::cin, tmp);
+        list_contact[i].SetpostalAddress(tmp);
         std::cout << "Enter emailAddress : ";
-        getline(std::cin, list_contact[i].emailAddress);
+        getline(std::cin, tmp);
+        list_contact[i].SetemailAddress(tmp);
         std::cout << "Enter phoneNumber : ";
-        getline(std::cin, list_contact[i].phoneNumber);
+        getline(std::cin, tmp);
+        list_contact[i].SetphoneNumber(tmp);
         std::cout << "Enter BirthdayDate : ";
-        getline(std::cin, list_contact[i].BirthdayDate);
+        getline(std::cin, tmp);
+        list_contact[i].SetBirthdayDate(tmp);
         std::cout << "Enter favoriteMeal : ";
-        getline(std::cin, list_contact[i].favoriteMeal);
+        getline(std::cin, tmp);
+        list_contact[i].SetfavoriteMeal(tmp);
         std::cout << "Enter underwearColor : ";
-        getline(std::cin, list_contact[i].underwearColor);
+        getline(std::cin, tmp);
+        list_contact[i].SetunderwearColor(tmp);
         std::cout << "Enter darkestSecret : ";
-        getline(std::cin, list_contact[i].darkestSecret);
+        getline(std::cin, tmp);
+        list_contact[i].SetdarkestSecret(tmp);
+        return (i + 1);
     }
     else
-    {
         std::cout << "You Can't Entre More Than 8 Contacts!" << std::endl;
-		return 0;
-    }
-    return (i + 1);
+    return (i);
 }
 
-void	parse(std::string info, int len)
+void parse(std::string info, int len)
 {
-	char word[11];
-	int sp;
-	int i = 0;
-	int j = 0;
-	sp = 10 - len;
-	while(i < sp)
-	{
-		word[i]=' ';
-		i++;
-	}
-	sp = 10 - sp;
-	while(sp)
-	{
-		word[i]=info[j];
-		j++;
-		i++;
-		sp--;
-	}
-	std::cout << word << "|";
+    char word[11];
+    int sp;
+    int i = 0;
+    int j = 0;
+    sp = 10 - len;
+    while (i < sp)
+    {
+        word[i] = ' ';
+        i++;
+    }
+    sp = 10 - sp;
+    while (sp)
+    {
+        word[i] = info[j];
+        j++;
+        i++;
+        sp--;
+    }
+    std::cout << word << "|";
 }
 
 void trunc(std::string info)
 {
-	char word[11];
-	int i = 0;
-	while (i < 10)
-	{
-		word[i] = info[i];
-		i++;
-	}
-	word[9] = '.';
-	word[10] = '\0';
-	std::cout << word << "|";
+    char word[11];
+    int i = 0;
+    while (i < 10)
+    {
+        word[i] = info[i];
+        i++;
+    }
+    word[9] = '.';
+    word[10] = '\0';
+    std::cout << word << "|";
 }
 
 void print(MyContact *list_contact, int y)
@@ -124,18 +118,18 @@ void print(MyContact *list_contact, int y)
     int len;
     std::cout.width(10);
     std::cout << std::right << y << "|";
-    if ((len = list_contact[y].firstName.length()) <= 10)
-        parse(list_contact[y].firstName, len);
+    if ((len = list_contact[y].GetfirstName().length()) <= 10)
+        parse(list_contact[y].GetfirstName(), len);
     else
-        trunc(list_contact[y].firstName);
-    if ((len = list_contact[y].lastName.length()) <= 10)
-        parse(list_contact[y].lastName, len);
+        trunc(list_contact[y].GetfirstName());
+    if ((len = list_contact[y].GetlastName().length()) <= 10)
+        parse(list_contact[y].GetlastName(), len);
     else
-        trunc(list_contact[y].lastName);
-    if ((len = list_contact[y].login.length()) <= 10)
-        parse(list_contact[y].login, len);
+        trunc(list_contact[y].GetlastName());
+    if ((len = list_contact[y].Getlogin().length()) <= 10)
+        parse(list_contact[y].Getlogin(), len);
     else
-        trunc(list_contact[y].login);
+        trunc(list_contact[y].Getlogin());
     std::cout << std::endl;
 }
 
@@ -176,15 +170,24 @@ void print_Contact(MyContact *list_contact, int i)
         y++;
     }
     std::cout << "Index : ";
-	getline(std::cin, cmd);
-    if (string_isdigit(cmd))
-        index = stoi(cmd);
-    if (!string_isdigit(cmd))
+    getline(std::cin, cmd);
+    if (cmd.size() == 0)
         std::cout << "Index error can you give a digit please" << std::endl;
-    else if (index < 8)
-        list_contact[index].print_list_contact();
-    else if (index > 8)
-        std::cout << "Index not found! please give index between 0 and 7" << std::endl;
+    else if (string_isdigit(cmd))
+    {
+        index = stoi(cmd);
+        if (index < 8)
+        {
+            if (index < i)
+                list_contact[index].print_list_contact();
+            else
+                std::cout << "Index not found!" << std::endl;
+        }
+        else if (index >= 8)
+            std::cout << "Index not found! please give index between 0 and 7" << std::endl;
+    }
+    else if (!string_isdigit(cmd))
+        std::cout << "Index error can you give a digit please" << std::endl;
 }
 
 int main()
@@ -196,12 +199,14 @@ int main()
     while (1)
     {
         std::cout << "Command : ";
-		getline(std::cin, cmd);
+        getline(std::cin, cmd);
         if (cmd == "EXIT")
             exit(0);
         else if (cmd == "ADD")
             i = add_Contact(list_contact, i);
         else if (cmd == "SEARCH")
             print_Contact(list_contact, i);
+        else
+            std::cout << "Command not found please!" << std::endl;
     }
 }
