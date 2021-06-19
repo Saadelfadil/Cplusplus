@@ -8,6 +8,5 @@ class HumanA {
         std::string name;
     public :
         HumanA(std::string name, Weapon &Human_A);
-    public :
         void attack();
 };
