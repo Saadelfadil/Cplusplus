@@ -1,37 +1,16 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/04 12:08:34 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/04/04 12:08:35 by sel-fadi         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include <iostream>
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
-
-int	main(void)
+int main()
 {
-	int	i;
-	Zombie handsome_zombie("Leo", "Alive");
+    std::string str = "HI THIS IS BRAIN";
+    std::string *stringPTR = &str;
+    std::string &stringREF = str;
 
-	handsome_zombie.advert();
-
-	ZombieEvent random_zombie("Dead");
-
-	Zombie *bad_zombie_event = random_zombie.newZombie("Baruto");
-	Zombie *good_zombie_event = random_zombie.newZombie("Naruto");
-
-	bad_zombie_event->advert();
-	good_zombie_event->advert();
-
-	i = -1;
-	while (++i < 5)
-		random_zombie.randomChump();
-
-	delete bad_zombie_event;
-	delete good_zombie_event;
+    std::cout << "the address in memory of string --> " << &str << std::endl;
+    std::cout << "the address in memory of stringPTR --> " << stringPTR << std::endl;
+    std::cout << "the address in memory of stringREF --> " << &stringREF << std::endl;
+    
+    std::cout << "the string using the pointer     --> " << *stringPTR << std::endl;
+    std::cout << "the string using the reference   --> " << stringREF << std::endl;
+    return (0);
 }

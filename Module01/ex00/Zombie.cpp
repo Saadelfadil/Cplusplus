@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/04/04 12:08:17 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/04/04 12:08:18 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/03 11:21:24 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_HEADERR_H
-#define MY_HEADERR_H
-#include <iostream>
+#include "Zombie.hpp"
 
-class Zombie {
-    public :
-        std::string type;
-        std::string name;
-    public :
-        Zombie(std::string type, std::string name);
-        ~Zombie();
-        void advert();
-};
+Zombie::Zombie(std::string name)
+{
+    this->name = name;
+}
 
-#endif
+Zombie::~Zombie()
+{
+    std::cout << "Good Bye Zoombie " << this->name << std::endl;
+}
+
+void Zombie::announce()
+{
+    std::cout << "<" << this->name  << "> Braiiiiiiinnnssss ..." << std::endl;
+}

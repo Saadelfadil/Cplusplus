@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Pony.hpp                                           :+:      :+:    :+:   */
+/*   ZombieHorde.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/04 11:48:50 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/04/04 11:58:46 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/07/03 11:37:15 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/03 11:37:24 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_HEADER_H
-#define MY_HEADER_H
+#ifndef MY_HEADERR_H
+#define MY_HEADERR_H
 #include <iostream>
 
-class Pony {
-    public :
+class Zombie {
+    private :
         std::string name;
-        int age;
-        Pony(std::string name, int age);
-        ~Pony();
+    public :
+        Zombie(std::string name);
+        ~Zombie();
+        void announce();
 };
+void randomChump(std::string name);
+Zombie* newZombie(std::string name);
 
 #endif
