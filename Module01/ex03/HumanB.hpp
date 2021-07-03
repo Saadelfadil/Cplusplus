@@ -1,14 +1,11 @@
-#pragma once
-#include <iostream>
-#include "Weapon.hpp"
+#include "HumanA.hpp"
 
 class HumanB {
-    public :
+    private :
         Weapon *Human_B;
         std::string name;
     public :
         HumanB(std::string name);
-    public :
         void attack();
         void setWeapon(Weapon &Human_B);
 };
