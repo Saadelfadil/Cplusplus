@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanB.hpp                                         :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/03 20:36:04 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/03 20:36:05 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/07/03 20:34:25 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/03 20:38:26 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef MY_HEADERR_H
+# define MY_HEADERR_H
+# include <iostream>
 
-class HumanB {
+class Karen {
     private :
-        Weapon *Human_B;
-        std::string name;
     public :
-        HumanB(std::string name);
-        void attack();
-        void setWeapon(Weapon &Human_B);
+        
 };
+
+#endif
