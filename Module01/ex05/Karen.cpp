@@ -22,9 +22,27 @@ Karen::~Karen()
     
 }
 
-void complain(std::string level)
+void Karen::complain(std::string level)
 {
+    Mykaren list[4] = {
+        &Karen::debug,
+        &Karen::info,
+        &Karen::warning,
+        &Karen::error
+    };
 
+    std::string arg[4] = {
+        "DEBUG",
+        "INFO",
+        "WARNING",
+        "ERROR"
+    };
+
+    for (int i = 0; i < 4; i++)
+    {
+        if (arg[i] == level)
+            (this->*list[i])();
+    }
 }
 
 void Karen::debug(void)

@@ -11,3 +11,11 @@
 /* ************************************************************************** */
 
 #include "Karen.hpp"
+
+int main()
+{
+    Karen mykaren;
+
+    mykaren.complain("DEBUG");
+    return 0;
+}

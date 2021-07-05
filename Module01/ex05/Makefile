@@ -12,7 +12,7 @@
 
 NAME=karen
 
-SRC = Karen.cpp Karen.hpp main.cpp
+SRC = Karen.cpp main.cpp
 
 all: $(NAME)
 

@@ -26,4 +26,6 @@ class Karen {
         void complain(std::string level);
 };
 
+typedef void (Karen::*Mykaren) (void);
+
 #endif
