@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/03 20:34:22 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/03 21:14:35 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/05 13:58:08 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,18 @@ void Karen::complain(std::string level)
     switch (resolveOption(level)) {
         case DEBUG:
             (this->*list[0])();
+            (this->*list[1])();
+            (this->*list[2])();
+            (this->*list[3])();
             break;
         case INFO:
             (this->*list[1])();
+            (this->*list[2])();
+            (this->*list[3])();
             break;
         case WARNING:
             (this->*list[2])();
+            (this->*list[3])();
             break;
         case ERROR:
             (this->*list[3])();
