@@ -43,9 +43,15 @@ int main(int argc, char **argv)
     if (argc == 4)
     {
         std::fstream ifs(argv[1]);
-        std::ofstream ofs(res);
-        if (ifs.is_open())
+        bool isEmpty = ifs.peek() == EOF;
+        if (isEmpty)
         {
+            std::cout << "Error: the file is empty\n";
+            exit(1);
+        }
+        else if (ifs.is_open())
+        {
+            std::ofstream ofs(res);
             std::string line;
             while (!ifs.eof())
             {
@@ -53,6 +59,11 @@ int main(int argc, char **argv)
                 std::string new_line = my_replace(line, argv[2], argv[3]);
                 ofs << new_line << "\n";
             }
+        }
+        else
+        {
+            std::cout << "Error: the file doesn't exist.\n";
+            exit(1);
         }
     }
     else
