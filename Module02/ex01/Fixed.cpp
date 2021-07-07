@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:18 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/07 11:25:19 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/07 11:42:28 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,24 @@ Fixed & Fixed::operator = ( Fixed const &fixedP)
     std::cout << "Assignation operator called" << std::endl;
     this->fixedPoint = fixedP.getRawBits();
     return *this;
+}
+
+float Fixed::toFloat( void ) const
+{
+    
+}
+
+int Fixed::toInt( void ) const
+{
+    
+}
+
+Fixed::Fixed(const int FixedP)
+{
+    std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float FixedP)
+{
+    std::cout << "Float constructor called" << std::endl;
 }

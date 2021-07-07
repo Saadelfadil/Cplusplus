@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rep.cpp                                            :+:      :+:    :+:   */
+/*   replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/02 15:27:21 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/02 18:02:08 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/05 17:23:55 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ std::string my_replace(std::string line, std::string to_be_searched, std::string
 
 int main(int argc, char **argv)
 {
-    std::string res = argv[1];
-    res += ".replace";
+        std::string res = argv[1];
+        res += ".replace";
     if (argc == 4)
     {
         std::fstream ifs(argv[1]);
