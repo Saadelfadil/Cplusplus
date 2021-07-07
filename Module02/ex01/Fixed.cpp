@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:18 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/07 11:42:28 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/07 19:35:10 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,26 +43,34 @@ void Fixed::setRawBits(int const raw)
 Fixed & Fixed::operator = ( Fixed const &fixedP)
 {
     std::cout << "Assignation operator called" << std::endl;
-    this->fixedPoint = fixedP.getRawBits();
+    this->fixedPoint = fixedP.fixedPoint;
     return *this;
 }
 
 float Fixed::toFloat( void ) const
 {
-    
+    return (float)fixedPoint / (1 << Fixed::numberOfFrac);
 }
 
 int Fixed::toInt( void ) const
 {
-    
+    return fixedPoint / (1 << Fixed::numberOfFrac);
 }
 
-Fixed::Fixed(const int FixedP)
+Fixed::Fixed(const int fixedP)
 {
     std::cout << "Int constructor called" << std::endl;
+    this->fixedPoint = fixedP * (1 << Fixed::numberOfFrac);
 }
 
-Fixed::Fixed(const float FixedP)
+Fixed::Fixed(const float fixedP)
 {
     std::cout << "Float constructor called" << std::endl;
+    this->fixedPoint = roundf(fixedP * (1 << Fixed::numberOfFrac)); 
+}
+
+std::ostream & operator << (std::ostream& output, Fixed const &obj)
+{
+    output << obj.toFloat();
+    return output;
 }
