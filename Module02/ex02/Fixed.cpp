@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:18 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/07 20:45:40 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/07 21:09:59 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,28 +121,26 @@ bool Fixed::operator != ( Fixed const &fixedP) const
 
 //------- arithmetic operators -------//
 
-Fixed  Fixed::operator + (Fixed const &fixedP) const
+Fixed  Fixed::operator + (Fixed const &fixedP)
 {
-    Fixed fixe;
-    fixe.fixedPoint += fixedP.fixedPoint;
-    return fixe;
+    this->fixedPoint += fixedP.fixedPoint;
+    return Fixed(this->fixedPoint);
 }
 
-Fixed  Fixed::operator - (Fixed const &fixedP) const
+Fixed  Fixed::operator - (Fixed const &fixedP)
 {
-    Fixed fixe;
-    fixe.fixedPoint -= fixedP.fixedPoint;
-    return fixe;
+    this->fixedPoint -= fixedP.fixedPoint;
+    return Fixed(this->fixedPoint);
 }
 
-Fixed  Fixed::operator * (Fixed const &fixedP) const
+Fixed  Fixed::operator * (Fixed const &fixedP)
 {
-    Fixed fixe;
-    fixe.fixedPoint *= fixedP.fixedPoint;
-    return fixe;
+    this->fixedPoint *= fixedP.fixedPoint;
+    return Fixed(this->fixedPoint);
 }
 
 Fixed  Fixed::operator / (Fixed const &fixedP)
 {
     this->fixedPoint /= fixedP.fixedPoint;
+    return Fixed(this->fixedPoint);
 }

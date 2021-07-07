@@ -29,8 +29,8 @@ class Fixed {
         void setRawBits( int const raw );
         float toFloat( void ) const;
         int toInt( void ) const;
-        static int &min(int &fixedP1, int &fixedP2);
-        static int &max(int &fixedP1, int &fixedP2);
+        // static int &min(int &fixedP1, int &fixedP2);
+        // static int &max(int &fixedP1, int &fixedP2);
 
         Fixed & operator = (Fixed const &fixedP);
 

@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 12:55:38 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/07 20:23:13 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/07 21:11:28 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int main( void )
         std::cout << a++ << std::endl;
         std::cout << a << std::endl;
         std::cout << b << std::endl;
-        std::cout << Fixed::max( a, b ) << std::endl;
+        // std::cout << Fixed::max( a, b ) << std::endl;
         return 0;
 }
