@@ -41,10 +41,10 @@ class Fixed {
         bool operator == (Fixed const &fixedP) const;
         bool operator != (Fixed const &fixedP) const;
 
-        Fixed operator + (Fixed const &fixedP);
-        Fixed operator - (Fixed const &fixedP);
-        Fixed operator * (Fixed const &fixedP);
-        Fixed operator / (Fixed const &fixedP);
+        Fixed operator + (Fixed const &fixedP) const;
+        Fixed operator - (Fixed const &fixedP) const;
+        Fixed operator * (Fixed const &fixedP) const;
+        Fixed operator / (Fixed const &fixedP) const;
 
         Fixed & operator ++ (void);
         Fixed operator ++ (int);

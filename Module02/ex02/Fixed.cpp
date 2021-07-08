@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:18 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/08 14:01:15 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/08 16:28:23 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,22 +102,22 @@ bool Fixed::operator != ( Fixed const &fixedP) const
 
 //------- arithmetic operators -------//
 
-Fixed  Fixed::operator + (Fixed const &fixedP)
+Fixed  Fixed::operator + (Fixed const &fixedP) const
 {
     return Fixed((float)(this->toFloat() + fixedP.toFloat()));
 }
 
-Fixed  Fixed::operator - (Fixed const &fixedP)
+Fixed  Fixed::operator - (Fixed const &fixedP) const
 {
     return Fixed((float)(this->toFloat() - fixedP.toFloat()));
 }
 
-Fixed  Fixed::operator * (Fixed const &fixedP)
+Fixed  Fixed::operator * (Fixed const &fixedP) const
 {
     return Fixed((float)(this->toFloat() * fixedP.toFloat()));
 }
 
-Fixed  Fixed::operator / (Fixed const &fixedP)
+Fixed  Fixed::operator / (Fixed const &fixedP) const
 {
     return Fixed((float)(this->toFloat() / fixedP.toFloat()));
 }
@@ -142,26 +142,29 @@ Fixed const &Fixed::max(const Fixed &fixedP1, const Fixed &fixedP2)
 
 //------- (pre-incr, post-incr) && (pre-decr, post-decr) -------//
 
+
+Fixed Fixed::operator ++ (int)
+{
+    Fixed rtn(*this);
+    this->fixedPoint += 1;
+    return (rtn);
+}
+
+Fixed Fixed::operator -- (int)
+{
+    Fixed rtn(*this);
+    this->fixedPoint -= 1;
+    return (rtn);
+}
+
 Fixed & Fixed::operator ++ (void)
 {
     this->fixedPoint++;
     return (*this);
 }
 
-Fixed Fixed::operator ++ (int)
-{
-    ++fixedPoint;
-    return (*this);
-}
-
 Fixed & Fixed::operator -- (void)
 {
     this->fixedPoint--;
-    return (*this);
-}
-
-Fixed Fixed::operator -- (int)
-{
-    --fixedPoint;
     return (*this);
 }
