@@ -25,12 +25,12 @@ class Fixed {
         Fixed(const Fixed &fixedP);
         ~Fixed();
         Fixed();
-        int getRawBits( void ) const;
-        void setRawBits( int const raw );
-        float toFloat( void ) const;
-        int toInt( void ) const;
-        // static int &min(int &fixedP1, int &fixedP2);
-        // static int &max(int &fixedP1, int &fixedP2);
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+        float toFloat(void) const;
+        int toInt(void) const;
+        static const Fixed &min(const Fixed &fixedP1, const Fixed &fixedP2);
+        static const Fixed &max(const Fixed &fixedP1, const Fixed &fixedP2);
 
         Fixed & operator = (Fixed const &fixedP);
 
@@ -46,10 +46,10 @@ class Fixed {
         Fixed operator * (Fixed const &fixedP);
         Fixed operator / (Fixed const &fixedP);
 
-        Fixed & operator ++ (void) const;
-        Fixed operator ++ (int) const;
-        Fixed & operator -- (void) const;
-        Fixed operator -- (int) const;
+        Fixed & operator ++ (void);
+        Fixed operator ++ (int);
+        Fixed & operator -- (void);
+        Fixed operator -- (int);
 };
 
 std::ostream &operator << (std::ostream& output, Fixed const &obj);
