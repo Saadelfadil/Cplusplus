@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:18 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/08 12:26:39 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/08 14:01:15 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Fixed::Fixed(const Fixed &fixedP)
 {
-    std::cout << fixedP.getRawBits() << std::endl;
     *this = fixedP;
 }
 
@@ -56,13 +55,11 @@ int Fixed::toInt( void ) const
 Fixed::Fixed(const int fixedP)
 {
     this->fixedPoint = fixedP * (1 << Fixed::numberOfFrac);
-    std::cout << "hello\n";
 }
 
 Fixed::Fixed(const float fixedP)
 {
     this->fixedPoint = roundf(fixedP * (1 << Fixed::numberOfFrac));
-    std::cout << "hello\n";
 }
 
 std::ostream & operator << (std::ostream& output, Fixed const &obj)
@@ -75,71 +72,54 @@ std::ostream & operator << (std::ostream& output, Fixed const &obj)
 
 bool Fixed::operator > ( Fixed const &fixedP) const
 {
-    if (fixedPoint > fixedP.getRawBits())
-        return 1;
-    return 0;
+    return (fixedPoint > fixedP.getRawBits());
 }
 
 bool Fixed::operator < ( Fixed const &fixedP) const
 {
-    if (fixedPoint < fixedP.getRawBits())
-        return 1;
-    return 0;
+    return (fixedPoint < fixedP.getRawBits());
 }
 
 bool Fixed::operator >= ( Fixed const &fixedP) const
 {
-    if (fixedPoint >= fixedP.getRawBits())
-        return 1;
-    return 0;
+    return (fixedPoint >= fixedP.getRawBits());
 }
 
 bool Fixed::operator <= ( Fixed const &fixedP) const
 {
-    if (fixedPoint <= fixedP.getRawBits())
-        return 1;
-    return 0;
+    return (fixedPoint <= fixedP.getRawBits());
 }
 
 bool Fixed::operator == ( Fixed const &fixedP) const
 {
-    if (fixedPoint == fixedP.getRawBits())
-        return 1;
-    return 0;
+    return (fixedPoint == fixedP.getRawBits());
 }
 
 bool Fixed::operator != ( Fixed const &fixedP) const
 {
-    if (fixedPoint != fixedP.getRawBits())
-        return 1;
-    return 0;
+    return (fixedPoint != fixedP.getRawBits());
 }
 
 //------- arithmetic operators -------//
 
 Fixed  Fixed::operator + (Fixed const &fixedP)
 {
-    this->fixedPoint += fixedP.fixedPoint;
-    return Fixed(this->fixedPoint);
+    return Fixed((float)(this->toFloat() + fixedP.toFloat()));
 }
 
 Fixed  Fixed::operator - (Fixed const &fixedP)
 {
-    this->fixedPoint -= fixedP.fixedPoint;
-    return Fixed(this->fixedPoint);
+    return Fixed((float)(this->toFloat() - fixedP.toFloat()));
 }
 
 Fixed  Fixed::operator * (Fixed const &fixedP)
 {
-    // std::cout << this->fixedPoint << " " << fixedP.fixedPoint << std::endl;
-    this->fixedPoint *= fixedP.fixedPoint;
-    return Fixed(this->fixedPoint);
+    return Fixed((float)(this->toFloat() * fixedP.toFloat()));
 }
 
 Fixed  Fixed::operator / (Fixed const &fixedP)
 {
-    this->fixedPoint /= fixedP.fixedPoint;
-    return Fixed(this->fixedPoint);
+    return Fixed((float)(this->toFloat() / fixedP.toFloat()));
 }
 
 //------- Min && Max functions -------//
@@ -172,8 +152,6 @@ Fixed Fixed::operator ++ (int)
 {
     ++fixedPoint;
     return (*this);
-    // ++this->fixedPoint;
-    // return this->fixedPoint;
 }
 
 Fixed & Fixed::operator -- (void)
