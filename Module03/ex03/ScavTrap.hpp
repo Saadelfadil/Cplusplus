@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 12:55:38 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 17:51:27 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/10 17:21:36 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef SCAVTRAP_H
+# define SCAVTRAP_H
+# include <iostream>
 #include "ClapTrap.hpp"
 
-int main(void)
+class ScavTrap : virtual public ClapTrap
 {
-    ClapTrap ft("zineb");
-    ClapTrap ft2(ft);
+    public :
+        ScavTrap(ScavTrap const &Clap);
+        ScavTrap & operator = (ScavTrap const &Clap);
+        ScavTrap(std::string name);
+        ScavTrap();
+        ~ScavTrap();
+        void guardGate();
+};
 
-    for (int i = 0; i < 5; i++)
-        ft.takeDamage(20);
-    for (int i = 0; i < 5; i++)
-        ft.beRepaired(20);
-
-    ft.attack("zarafa"); 
-}
+#endif

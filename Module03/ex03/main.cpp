@@ -6,33 +6,51 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 12:55:38 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 17:49:01 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/10 17:39:40 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-    ClapTrap ft("FR4GGY",10,30,70);
-    ClapTrap ft2(ft);
+    ClapTrap Clap("zarafa");
 
-    for (int i = 0; i < 3; i++)
-        ft.takeDamage(20);
+    Clap.attack("zineb");
+    Clap.takeDamage(6);
+    Clap.beRepaired(8);
 
-    for (int i = 0; i < 3; i++)
-        ft.beRepaired(20);
+    std::cout << "\n\n" << std::endl;
 
-    ScavTrap st("pardalis");
-    ScavTrap st2(st);
+    ScavTrap Scav("HH");
 
-    for (int i = 0; i < 3; i++)
-        st.takeDamage(20);
+    Scav.attack("zineb");
+    Scav.takeDamage(6);
+    Scav.beRepaired(8);
+    Scav.guardGate();
 
-    for (int i = 0; i < 3; i++)
-        st.beRepaired(20);
 
-    st.attack("kawkab");
-    st.guardGate();
+    std::cout << "\n\n" << std::endl;
 
+    FragTrap Frag("camelo");
+
+    Frag.attack("zineb");
+    Frag.takeDamage(6);
+    Frag.beRepaired(8);
+    Frag.highFivesGuys();
+
+    std::cout << "\n\n" << std::endl;
+
+    DiamondTrap Diamond("zarafa");
+
+    Diamond.attack("zineb");
+    Diamond.takeDamage(6);
+    Diamond.beRepaired(8);
+    Diamond.guardGate();
+    Diamond.highFivesGuys();
+    Diamond.whoAmI();
+
+    std::cout << "\n\n" << std::endl;
+
+    return 0;
 }

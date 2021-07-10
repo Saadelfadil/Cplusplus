@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 14:11:17 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/10 17:24:32 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class ClapTrap {
         ClapTrap(ClapTrap const &Clap);
         ClapTrap & operator = (ClapTrap const &Clap);
         ~ClapTrap();
-        void attack(std::string const &target);
+        virtual void attack(std::string const &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };
