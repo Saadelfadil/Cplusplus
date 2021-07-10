@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 17:33:30 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/10 20:18:06 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name", 100, 50, 30)
 {
     this->_name = name;
-    std::cout << "DiamondTrap Default Constructor Called" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
@@ -25,7 +24,7 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap::DiamondTrap()
 {
-
+    std::cout << "DiamondTrap Default Constructor Called" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(DiamondTrap const &Diamond)

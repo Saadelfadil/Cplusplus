@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 17:49:59 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/10 20:15:36 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attack
 
 ClapTrap::ClapTrap()
 {
-
+    std::cout << "ClapTrap Default Constructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &Clap)

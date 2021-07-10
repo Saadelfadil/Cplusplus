@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 14:11:17 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/10 20:10:55 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <iostream>
 
 class ClapTrap {
-    public :
+    private :
         std::string name;
         int hitPoints;
         int energyPoints;
@@ -26,7 +26,7 @@ class ClapTrap {
         ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
         ClapTrap(ClapTrap const &Clap);
         ClapTrap & operator = (ClapTrap const &Clap);
-        ~ClapTrap();
+        virtual ~ClapTrap();
         void attack(std::string const &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

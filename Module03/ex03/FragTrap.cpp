@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 17:41:14 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/10 20:18:09 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name ,100, 100, 30)
 {
-    std::cout << "FragTrap Default Constructor Called" << std::endl;
+    
 }
 
 FragTrap::~FragTrap()
@@ -24,7 +24,7 @@ FragTrap::~FragTrap()
 
 FragTrap::FragTrap()
 {
-
+    std::cout << "FragTrap Default Constructor Called" << std::endl;
 }
 
 FragTrap::FragTrap(FragTrap const &Frag)
