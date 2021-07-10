@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 10:46:15 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/10 18:05:29 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap(std::string name)
 {
-    std::cout << "Default Constructor Called" << std::endl;
+    std::cout << "ClapTrap Default Constructor Called" << std::endl;
     this->name = name;
     this->hitPoints = 10;
     this->energyPoints = 10;
@@ -23,12 +23,12 @@ ClapTrap::ClapTrap(std::string name)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor Called" << std::endl;
+    std::cout << "ClapTrap Destructor Called" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &Clap)
 {
-    std::cout << "Copy Constructor Called" << std::endl;
+    std::cout << "ClapTrap Copy Constructor Called" << std::endl;
     *this = Clap;
 }
 
