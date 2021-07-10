@@ -6,13 +6,13 @@
 #    By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/03 11:16:32 by sel-fadi          #+#    #+#              #
-#    Updated: 2021/07/07 11:26:06 by sel-fadi         ###   ########.fr        #
+#    Updated: 2021/07/10 11:36:04 by sel-fadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=fixed
+NAME=scavtrap
 
-SRC = Fixed.cpp main.cpp
+SRC = ClapTrap.cpp ScavTrap.cpp main.cpp 
 
 all: $(NAME)
 

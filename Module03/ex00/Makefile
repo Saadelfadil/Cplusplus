@@ -6,11 +6,11 @@
 #    By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/03 11:16:32 by sel-fadi          #+#    #+#              #
-#    Updated: 2021/07/09 18:11:37 by sel-fadi         ###   ########.fr        #
+#    Updated: 2021/07/10 09:18:42 by sel-fadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=fixed
+NAME=claptrap
 
 SRC = ClapTrap.cpp main.cpp
 

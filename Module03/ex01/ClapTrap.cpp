@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 10:46:15 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/10 13:14:26 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,19 @@ ClapTrap::ClapTrap(std::string name)
 ClapTrap::~ClapTrap()
 {
     std::cout << "Destructor Called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage)
+{
+    this->name = name;
+    this->hitPoints = hitPoints;
+    this->energyPoints = energyPoints;
+    this->attackDamage = attackDamage;
+}
+
+ClapTrap::ClapTrap()
+{
+
 }
 
 ClapTrap::ClapTrap(ClapTrap const &Clap)
@@ -46,7 +59,8 @@ void ClapTrap::attack(std::string const &target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
     std::cout << this->name << " take " << amount << " points of damage!" << std::endl;
-    this->hitPoints -= amount;
+    if (this->hitPoints >= (int)amount)
+        this->hitPoints -= amount;
     std::cout << "The current Hitpoints is : " << this->hitPoints << std::endl;
 }
 

@@ -6,25 +6,26 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/10 11:38:28 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/10 13:07:45 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_HEADERR_H
-# define MY_HEADERR_H
+#ifndef CLAPTRAP_H
+# define CLAPTRAP_H
 # include <iostream>
 
 class ClapTrap {
-    private :
+    protected :
         std::string name;
         int hitPoints;
         int energyPoints;
         int attackDamage;
     public :
-        ClapTrap(ClapTrap const &Clap);
-        ClapTrap & operator = (ClapTrap const &Clap);
         ClapTrap(std::string name);
         ClapTrap();
+        ClapTrap(std::string name, int hitPoints, int energyPoints, int attackDamage);
+        ClapTrap(ClapTrap const &Clap);
+        ClapTrap & operator = (ClapTrap const &Clap);
         ~ClapTrap();
         void attack(std::string const &target);
         void takeDamage(unsigned int amount);
