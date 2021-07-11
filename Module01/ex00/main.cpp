@@ -1,23 +1,21 @@
-#include "Pony.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/04/04 12:08:34 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/03 11:34:53 by sel-fadi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ponyOnTheStack()
-{
-    std::cout << "--- Stack ---" << std::endl;
-    Pony p1 = Pony("yolka", 4);
-    std::cout << "Pony Born !" << std::endl;
-}
+#include "Zombie.hpp"
 
-void ponyOnTheHeap()
+int	main(void)
 {
-    std::cout << "--- Heap ---" << std::endl;
-    Pony *p2 = new Pony("panto", 2);
-    std::cout << "Pony Born !" << std::endl;
-    delete p2;
-}
-
-int main()
-{
-    ponyOnTheStack();
-    ponyOnTheHeap();
-    return (0);
+	Zombie *zombii = newZombie("hicham");
+	zombii->announce();
+	delete zombii;
+	randomChump("sel-fadi");
 }

@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Karen.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/03 20:34:27 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/03 20:35:54 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/07/03 20:34:25 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/03 21:09:53 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef MY_HEADERR_H
+# define MY_HEADERR_H
+# include <iostream>
 
-int main(int argc, char **argv)
-{
-    Karen mykaren;
+class Karen {
+    private :
+        void debug(void);
+        void info(void);
+        void warning(void);
+        void error(void);
+    public :
+        ~Karen();
+        Karen();
+        void complain(std::string level);
+};
 
-    if (argc == 2)
-        mykaren.complain(argv[1]);
-    return 0;
-}
+typedef void (Karen::*Mykaren) (void);
+
+#endif

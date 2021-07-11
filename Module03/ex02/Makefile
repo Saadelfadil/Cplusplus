@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/01 09:06:50 by sel-fadi          #+#    #+#              #
-#    Updated: 2021/04/03 17:10:27 by sel-fadi         ###   ########.fr        #
+#    Created: 2021/07/03 11:16:32 by sel-fadi          #+#    #+#              #
+#    Updated: 2021/07/10 17:02:54 by sel-fadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=main
+NAME=fragtrap
 
-SRC = main.cpp contact.cpp
+SRC = ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp 
 
 all: $(NAME)
 

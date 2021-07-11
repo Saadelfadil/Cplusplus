@@ -5,18 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/03 20:34:27 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/03 20:35:54 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/07/11 13:36:40 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/11 18:22:53 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "AWeapon.hpp"
 
-int main(int argc, char **argv)
+int main()
 {
-    Karen mykaren;
-
-    if (argc == 2)
-        mykaren.complain(argv[1]);
+    Sorcerer robert("Robert", "the Magnificent");
+    Victim jim("Jimmy");
+    Peon joe("Joe");
+    std::cout << robert << jim << joe;
+    robert.polymorph(jim);
+    robert.polymorph(joe);
     return 0;
 }

@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/03 20:34:27 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/03 20:35:54 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/07 11:23:09 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#ifndef MY_HEADERR_H
+# define MY_HEADERR_H
+# include <iostream>
 
-int main(int argc, char **argv)
-{
-    Karen mykaren;
+class Fixed {
+    private :
+        int fixedPoint;
+        static int const numberOfFrac = 8;
+    public :
+        Fixed(const Fixed &fixedP);
+        ~Fixed();
+        Fixed();
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
+        Fixed & operator = (Fixed const &fixedP);
+};
 
-    if (argc == 2)
-        mykaren.complain(argv[1]);
-    return 0;
-}
+#endif

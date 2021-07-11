@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/03 20:34:27 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/03 20:35:54 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/07/03 14:15:45 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/03 14:15:46 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Weapon.hpp"
 
-int main(int argc, char **argv)
-{
-    Karen mykaren;
-
-    if (argc == 2)
-        mykaren.complain(argv[1]);
-    return 0;
-}
+class HumanA {
+    private:
+        std::string name;
+        Weapon &Human_A;
+    public :
+        HumanA(std::string name, Weapon &Human_A);
+        void attack();
+};

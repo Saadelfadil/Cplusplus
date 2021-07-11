@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/03 20:34:27 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/03 20:35:54 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/07/03 11:36:58 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/03 11:43:24 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Zombie.hpp"
 
-int main(int argc, char **argv)
+Zombie::Zombie()
 {
-    Karen mykaren;
+}
 
-    if (argc == 2)
-        mykaren.complain(argv[1]);
-    return 0;
+Zombie::~Zombie()
+{
+    std::cout << "Good Bye Zoombie " << this->name << std::endl;
+}
+
+void Zombie::set_name(std::string name)
+{
+    this->name = name;
+}
+
+void Zombie::announce()
+{
+    std::cout << "<" << this->name  << "> Braiiiiiiinnnssss ..." << std::endl;
 }

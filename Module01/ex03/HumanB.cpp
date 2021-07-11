@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/03 20:34:27 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/03 20:35:54 by sel-fadi         ###   ########.fr       */
+/*   Created: 2021/07/05 12:55:32 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/05 12:55:33 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "HumanB.hpp"
 
-int main(int argc, char **argv)
+HumanB::HumanB(std::string name)
 {
-    Karen mykaren;
+    this->name = name;
+};
 
-    if (argc == 2)
-        mykaren.complain(argv[1]);
-    return 0;
+void HumanB::setWeapon(Weapon &Human_B)
+{
+    this->Human_B = &Human_B;
 }
+
+void HumanB::attack()
+{
+    std::cout << this->name << " attacks with his " << this->Human_B->getType() << std::endl;
+};

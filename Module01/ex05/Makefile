@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/04/01 09:06:50 by sel-fadi          #+#    #+#              #
-#    Updated: 2021/04/03 17:10:27 by sel-fadi         ###   ########.fr        #
+#    Created: 2021/07/03 20:34:38 by sel-fadi          #+#    #+#              #
+#    Updated: 2021/07/03 20:35:31 by sel-fadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=main
+NAME=karen
 
-SRC = main.cpp contact.cpp
+SRC = Karen.cpp main.cpp
 
 all: $(NAME)
 

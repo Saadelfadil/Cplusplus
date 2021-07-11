@@ -1,11 +1,21 @@
-#include <iostream>
-#include "Human.hpp"
-#include "Brain.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/03 20:34:27 by sel-fadi          #+#    #+#             */
+/*   Updated: 2021/07/03 20:35:54 by sel-fadi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "Karen.hpp"
 
 int main()
 {
-    Human bob;
-    std::cout << bob.identifier() << std::endl;
-    std::cout << bob.mybrain.identifier() << std::endl;
+    Karen mykaren;
+
+    mykaren.complain("DEBUG");
     return 0;
 }
