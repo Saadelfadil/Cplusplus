@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:54:49 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/11 17:32:32 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/11 17:47:02 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ std::ostream &			operator<<( std::ostream & o, Victim const & i )
 {
 	o << "I'm " << i.get_name() << " and I like otters!" << std::endl;
 	return o;
+	
 }
 
 
