@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/11 15:23:46 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/11 17:32:46 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,6 @@ Sorcerer::~Sorcerer()
 
 Sorcerer &				Sorcerer::operator=( Sorcerer const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
 	this->_name = rhs._name;
 	this->_title = rhs._title;
 	return *this;
@@ -54,7 +50,7 @@ Sorcerer &				Sorcerer::operator=( Sorcerer const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Sorcerer const & i )
 {
-	o << "Name = " << i.get_name() << " -- Name = " << i.get_title();
+	o << "I'm "<< i.get_name() << " , " << i.get_title() << " , and I like ponies!" << std::endl;
 	return o;
 }
 
@@ -62,11 +58,6 @@ std::ostream &			operator<<( std::ostream & o, Sorcerer const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
-void Sorcerer::whoIamI(void)
-{
-	std::cout << "I'm "<< this->_name << " , " << this->_title << " , and I like ponies!" << std::endl;
-}
 
 std::string Sorcerer::get_name(void) const
 {

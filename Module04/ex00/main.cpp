@@ -6,21 +6,20 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:36:40 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/11 15:36:23 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/11 16:58:24 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
+#include "Peon.hpp"
 
-int main(void)
+int main()
 {
-    Sorcerer so("Saad", "Pro");
-    Victim vi("Achraf");
-    // so.get_name();
-    // so.get_title();
-    so.whoIamI();
-    so.polymorph(vi);
-    
-    vi.getPolymorphed();
-    vi.whoIamI();
+    Sorcerer robert("Robert", "the Magnificent");
+    Victim jim("Jimmy");
+    Peon joe("Joe");
+    std::cout << robert << jim << joe;
+    robert.polymorph(jim);
+    robert.polymorph(joe);
+    return 0;
 }

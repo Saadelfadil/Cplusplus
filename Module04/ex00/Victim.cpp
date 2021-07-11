@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:54:49 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/11 15:26:32 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/11 17:32:32 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ Victim::Victim(const Victim & src )
 	*this = src;
 }
 
-
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
@@ -36,24 +35,19 @@ Victim::~Victim()
 	std::cout << "Victim " << this->_name << " just died for no apparent reason!" << std::endl;
 }
 
-
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
 Victim &	Victim::operator=( Victim const & rhs )
 {
-	//if ( this != &rhs )
-	//{
-		//this->_value = rhs.getValue();
-	//}
 	this->_name = rhs._name;
 	return *this;
 }
 
 std::ostream &			operator<<( std::ostream & o, Victim const & i )
 {
-	o << "Name = " << i.get_name();
+	o << "I'm " << i.get_name() << " and I like otters!" << std::endl;
 	return o;
 }
 
@@ -61,11 +55,6 @@ std::ostream &			operator<<( std::ostream & o, Victim const & i )
 /*
 ** --------------------------------- METHODS ----------------------------------
 */
-
-void Victim::whoIamI(void)
-{
-	std::cout << "I'm " << this->_name << " and I like otters!" << std::endl;
-}
 
 std::string Victim::get_name(void) const
 {
