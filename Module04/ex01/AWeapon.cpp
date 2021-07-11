@@ -59,7 +59,7 @@ std::string AWeapon::getName() const
 
 int AWeapon::getAPCost() const
 {
-	return (this->_apcost)
+	return (this->_apcost);
 }
 
 int AWeapon::getDamage() const
