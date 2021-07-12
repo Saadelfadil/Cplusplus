@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 19:00:32 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/12 19:00:36 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ Character::Character(std::string const & name) : _name(name)
 	
 }
 
-Character(int type) : _type(type)
+Character::Character(int type) : _type(type)
 {
 	
 }
 
-Character(std::string const & name, int type) : _name(name), _type(type)
+Character::Character(std::string const & name, int type) : _name(name), _type(type)
 {
 	
 }
@@ -57,8 +57,9 @@ Character::~Character()
 
 Character &		Character::operator=(Character const & rhs)
 {
-	this->_hp = rhs._hp;
-	this->_type = rhs._type;
+	this->_name = rhs._name;
+	this->_ap = rhs._ap;
+	this->_curWeapon = rhs._curWeapon;
 	return *this;
 }
 
@@ -66,20 +67,19 @@ Character &		Character::operator=(Character const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string Character::getType() const
+void Character::recoverAP();
 {
-	return (this->_type);
+	return (this->_ap);
 }
 
-int Character::getHP() const
+void Character::equip(AWeapon* curWeapon)
 {
-	return (this->_hp);
+	return (this->_curWeapon);
 }
 
-void Character::takeDamage(int damage)
+void Character::attack(Enemy* enem)
 {
-	if (damage > 0 && this->_hp > 0)
-		this->_hp -= damage;
+	return (this->_enem);
 }
 
 /*
