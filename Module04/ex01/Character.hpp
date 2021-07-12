@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <string>
-# include "AWeapon"
+# include "AWeapon.hpp"
 
 class Character
 {
