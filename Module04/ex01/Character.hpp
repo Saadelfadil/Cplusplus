@@ -22,15 +22,18 @@ class Character
 	protected:
 		std::string _name;
 		int _ap;
-		AWeapon *curWeapon;
+		AWeapon *_curWeapon;
 	public:
 	Character(std::string const & name);
-	[...]
+	Character(int type);
+	Character(std::string const & name, int type);
 	~Character();
+	Character(const Character & src);
 	void recoverAP();
-	void equip(AWeapon*);
-	void attack(Enemy*);
+	void equip(AWeapon* curWeapon);
+	void attack(Enemy* enem);
 	std::string getName() const;
+	Character &		Character::operator=(Character const & rhs);
 };
 
 
