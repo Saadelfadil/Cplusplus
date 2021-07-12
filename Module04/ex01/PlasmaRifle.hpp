@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AWeapon.hpp                                        :+:      :+:    :+:   */
+/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 11:50:18 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/12 12:38:37 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-# define SORCERER_HPP
+#ifndef PLASMARIFLE_HPP
+# define PLASMARIFLE_HPP
 
 # include <iostream>
 # include <string>
+# include "AWeapon.hpp"
 
-class AWeapon
+class PlasmaRifle : public AWeapon
 {
-	protected:
-		std::string _name;
-		int			_apcost;
-		int			_damage;
 	public:
-		AWeapon(std::string const & name, int apcost, int damage);
-		~AWeapon();
-		AWeapon();
-		AWeapon::AWeapon(const AWeapon & src);
-		std::string getName() const;
-		int getAPCost() const;
-		int getDamage() const;
-		virtual void attack() const = 0;
+		PlasmaRifle(std::string const & name, int apcost, int damage);
+		~PlasmaRifle();
+		PlasmaRifle();
+		PlasmaRifle::PlasmaRifle(const PlasmaRifle & src);
+		PlasmaRifle & PlasmaRifle::operator=(PlasmaRifle const & rhs);
+		void attack();
 };
 
 

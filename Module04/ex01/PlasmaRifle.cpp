@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AWeapon.cpp                                        :+:      :+:    :+:   */
+/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 11:52:43 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/12 12:37:51 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AWeapon.hpp"
+#include "PlasmaRifle.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AWeapon::AWeapon(std::string const & name, int apcost, int damage) : _name(name), _apcost(apcost), _damage(damage)
+PlasmaRifle::PlasmaRifle(std::string const & name, int apcost, int damage) : AWeapon(name, apcost, damage)
 {
 	
 }
 
-AWeapon::AWeapon( const AWeapon & src )
+PlasmaRifle::PlasmaRifle( const PlasmaRifle & src )
 {
 	
 }
 
+PlasmaRifle::PlasmaRifle()
+{
+	
+}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-AWeapon::~AWeapon()
+PlasmaRifle::~PlasmaRifle()
 {
 	
 }
@@ -40,7 +44,7 @@ AWeapon::~AWeapon()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-AWeapon &		AWeapon::operator=(AWeapon const & rhs)
+PlasmaRifle &		PlasmaRifle::operator=(PlasmaRifle const & rhs)
 {
 	this->_name = rhs._name;
 	this->_apcost = rhs._apcost;
@@ -52,21 +56,10 @@ AWeapon &		AWeapon::operator=(AWeapon const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string AWeapon::getName() const
+void PlasmaRifle::attack()
 {
-	return (this->_name);
+	std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }
-
-int AWeapon::getAPCost() const
-{
-	return (this->_apcost);
-}
-
-int AWeapon::getDamage() const
-{
-	return (this->_damage);
-}
-
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

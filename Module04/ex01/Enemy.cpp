@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AWeapon.cpp                                        :+:      :+:    :+:   */
+/*   Enemy.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 11:52:43 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/12 13:15:47 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AWeapon.hpp"
+#include "Enemy.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AWeapon::AWeapon(std::string const & name, int apcost, int damage) : _name(name), _apcost(apcost), _damage(damage)
+Enemy::Enemy(int hp, std::string const & type) : _hp(hp), _type(type)
 {
 	
 }
 
-AWeapon::AWeapon( const AWeapon & src )
+Enemy::Enemy( const Enemy & src )
 {
 	
 }
@@ -31,7 +31,7 @@ AWeapon::AWeapon( const AWeapon & src )
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-AWeapon::~AWeapon()
+Enemy::~Enemy()
 {
 	
 }
@@ -40,7 +40,7 @@ AWeapon::~AWeapon()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-AWeapon &		AWeapon::operator=(AWeapon const & rhs)
+Enemy &		Enemy::operator=(Enemy const & rhs)
 {
 	this->_name = rhs._name;
 	this->_apcost = rhs._apcost;
@@ -52,19 +52,19 @@ AWeapon &		AWeapon::operator=(AWeapon const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string AWeapon::getName() const
-{
-	return (this->_name);
-}
+// std::string Enemy::getName() const
+// {
+// 	return (this->_name);
+// }
 
-int AWeapon::getAPCost() const
-{
-	return (this->_apcost);
-}
+// int Enemy::getAPCost() const
+// {
+// 	return (this->_apcost);
+// }
 
-int AWeapon::getDamage() const
+void Enemy::takeDamage(int damage)
 {
-	return (this->_damage);
+	if (damage)
 }
 
 

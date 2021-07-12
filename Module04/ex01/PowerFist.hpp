@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AWeapon.hpp                                        :+:      :+:    :+:   */
+/*   PowerFist.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 11:50:18 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/12 12:42:03 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SORCERER_HPP
-# define SORCERER_HPP
+#ifndef POWERFIST_HPP
+# define POWERFIST_HPP
 
 # include <iostream>
 # include <string>
+# include "AWeapon.hpp"
 
-class AWeapon
+class PowerFist : public AWeapon
 {
-	protected:
-		std::string _name;
-		int			_apcost;
-		int			_damage;
 	public:
-		AWeapon(std::string const & name, int apcost, int damage);
-		~AWeapon();
-		AWeapon();
-		AWeapon::AWeapon(const AWeapon & src);
-		std::string getName() const;
-		int getAPCost() const;
-		int getDamage() const;
-		virtual void attack() const = 0;
+		PowerFist(std::string const & name, int apcost, int damage);
+		~PowerFist();
+		PowerFist();
+		PowerFist::PowerFist(const PowerFist & src);
+		PowerFist & PowerFist::operator=(PowerFist const & rhs);
+		void attack();
 };
 
 
