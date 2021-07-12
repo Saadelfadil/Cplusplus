@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.cpp                                          :+:      :+:    :+:   */
+/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 18:21:26 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/12 18:47:20 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Enemy.hpp"
+#include "RadScorpion.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Enemy::Enemy(int hp, std::string const & type) : _hp(hp), _type(type)
+RadScorpion::RadScorpion(int hp, std::string const & type) : Enemy(hp, type)
 {
 	
 }
 
-Enemy::Enemy(const Enemy & src)
+RadScorpion::RadScorpion(const RadScorpion & src)
 {
 	
 }
 
-Enemy::Enemy()
+RadScorpion::RadScorpion()
 {
-	
+	std::cout << "* click click click *" << std::endl;
 }
 
 
@@ -36,16 +36,16 @@ Enemy::Enemy()
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Enemy::~Enemy()
+RadScorpion::~RadScorpion()
 {
-	
+	std::cout << "* SPROTCH *" << std::endl;
 }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Enemy &		Enemy::operator=(Enemy const & rhs)
+RadScorpion &		RadScorpion::operator=(RadScorpion const & rhs)
 {
 	this->_hp = rhs._hp;
 	this->_type = rhs._type;
@@ -56,21 +56,6 @@ Enemy &		Enemy::operator=(Enemy const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string Enemy::getType() const
-{
-	return (this->_type);
-}
-
-int Enemy::getHP() const
-{
-	return (this->_hp);
-}
-
-void Enemy::takeDamage(int damage)
-{
-	if (damage > 0 && this->_hp > 0)
-		this->_hp -= damage;
-}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
