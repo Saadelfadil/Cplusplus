@@ -195,7 +195,6 @@ int main()
     MyContact list_contact[8];
     int i = 0;
     std::string cmd;
-
     while (1)
     {
         std::cout << "Command : ";
