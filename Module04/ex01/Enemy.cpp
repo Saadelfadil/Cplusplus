@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 13:15:47 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/12 13:40:43 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,12 @@ Enemy::Enemy(int hp, std::string const & type) : _hp(hp), _type(type)
 	
 }
 
-Enemy::Enemy( const Enemy & src )
+Enemy::Enemy(const Enemy & src)
+{
+	
+}
+
+Enemy::Enemy()
 {
 	
 }
@@ -42,9 +47,8 @@ Enemy::~Enemy()
 
 Enemy &		Enemy::operator=(Enemy const & rhs)
 {
-	this->_name = rhs._name;
-	this->_apcost = rhs._apcost;
-	this->_damage = rhs._damage;
+	this->_hp = rhs._hp;
+	this->_type = rhs._type;
 	return *this;
 }
 
@@ -52,19 +56,22 @@ Enemy &		Enemy::operator=(Enemy const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-// std::string Enemy::getName() const
-// {
-// 	return (this->_name);
-// }
+std::string Enemy::getType() const
+{
+	return (this->_type);
+}
 
-// int Enemy::getAPCost() const
-// {
-// 	return (this->_apcost);
-// }
+int Enemy::getHP() const
+{
+	return (this->_hp);
+}
+
+
 
 void Enemy::takeDamage(int damage)
 {
-	if (damage)
+	if (damage > 0 && this->_hp > 0)
+		this->_hp -= damage;
 }
 
 
