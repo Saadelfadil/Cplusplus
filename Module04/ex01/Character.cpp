@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 19:00:36 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/12 20:04:38 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,7 @@
 
 Character::Character(std::string const & name) : _name(name)
 {
-	
-}
-
-Character::Character(int type) : _type(type)
-{
-	
-}
-
-Character::Character(std::string const & name, int type) : _name(name), _type(type)
-{
-	
+	this->_ap = 40;
 }
 
 Character::Character(const Character & src)
@@ -67,19 +57,20 @@ Character &		Character::operator=(Character const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void Character::recoverAP();
+void Character::recoverAP()
 {
-	return (this->_ap);
+	if ((this->_ap + 10) <= 40)
+		this->_ap += 10;
 }
 
 void Character::equip(AWeapon* curWeapon)
 {
-	return (this->_curWeapon);
+	// return (this->_curWeapon);
 }
 
 void Character::attack(Enemy* enem)
 {
-	return (this->_enem);
+	enem->takeDamage(this->_curWeapon->getDamage());
 }
 
 /*

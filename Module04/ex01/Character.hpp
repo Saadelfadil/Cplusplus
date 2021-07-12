@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 18:55:09 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/12 19:57:11 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 # include <iostream>
 # include <string>
 # include "AWeapon.hpp"
+# include "Enemy.hpp"
 
 class Character
 {
-	protected:
+	private:
 		std::string _name;
 		int _ap;
 		AWeapon *_curWeapon;
 	public:
 	Character(std::string const & name);
-	Character(int type);
-	Character(std::string const & name, int type);
 	~Character();
+	Character();
 	Character(const Character & src);
 	void recoverAP();
 	void equip(AWeapon* curWeapon);
