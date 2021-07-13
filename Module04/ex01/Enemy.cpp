@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 17:58:32 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 18:37:57 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Enemy::Enemy() : _hp(0), _type(std::string())
 
 Enemy::~Enemy()
 {
-	
+	std::cout << "Hello Iam Saad" << std::endl;	
 }
 
 /*
