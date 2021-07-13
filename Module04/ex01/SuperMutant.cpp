@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 18:32:13 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 09:32:39 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,15 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-SuperMutant::SuperMutant(int hp, std::string const & type) : Enemy(hp, type)
+SuperMutant::SuperMutant() : Enemy(170, "Super Mutant")
 {
-	
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
 SuperMutant::SuperMutant(const SuperMutant & src)
 {
 	
 }
-
-SuperMutant::SuperMutant()
-{
-	std::cout << "Gaaah. Me want smash heads!" << std::endl;
-}
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------

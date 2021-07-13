@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 18:47:18 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 09:32:55 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,8 @@
 class RadScorpion : public Enemy
 {
 	public:
-		RadScorpion(int hp, std::string const & type);
-		~RadScorpion();
 		RadScorpion();
+		~RadScorpion();
 		RadScorpion::RadScorpion(const RadScorpion & src);
 };
 

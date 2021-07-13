@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 18:47:20 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 09:33:26 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,15 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-RadScorpion::RadScorpion(int hp, std::string const & type) : Enemy(hp, type)
+RadScorpion::RadScorpion() : Enemy(80, "RadScorpion")
 {
-	
+	std::cout << "* click click click *" << std::endl;
 }
 
 RadScorpion::RadScorpion(const RadScorpion & src)
 {
 	
 }
-
-RadScorpion::RadScorpion()
-{
-	std::cout << "* click click click *" << std::endl;
-}
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
