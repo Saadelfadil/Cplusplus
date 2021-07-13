@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 09:26:53 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:59:08 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class PlasmaRifle : public AWeapon
 	public:
 		PlasmaRifle();
 		~PlasmaRifle();
-		PlasmaRifle::PlasmaRifle(const PlasmaRifle & src);
-		PlasmaRifle & PlasmaRifle::operator=(PlasmaRifle const & rhs);
-		void attack();
+		PlasmaRifle(const PlasmaRifle & src);
+		PlasmaRifle & operator=(PlasmaRifle const & rhs);
+		void attack() const;
 };
 
 

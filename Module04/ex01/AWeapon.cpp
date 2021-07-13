@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 16:44:26 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 17:39:06 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ AWeapon::AWeapon(const AWeapon &src)
 	*this = src;
 }
 
+AWeapon::AWeapon() : _name(std::string()), _apcost(0), _damage(0)
+{
+}
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------

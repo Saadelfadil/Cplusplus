@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 16:44:57 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:59:29 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ PlasmaRifle &		PlasmaRifle::operator=(PlasmaRifle const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void PlasmaRifle::attack()
+void PlasmaRifle::attack() const
 {
 	std::cout << "* piouuu piouuu piouuu *" << std::endl;
 }

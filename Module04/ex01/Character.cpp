@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 16:44:41 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 17:31:45 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,12 @@ int Character::getAP(void) const
 {
 	return (this->_ap);
 }
+
+std::string const Character::getName() const
+{
+	return this->_name;
+}
+
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

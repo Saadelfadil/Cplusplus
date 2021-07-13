@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 16:24:37 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:51:08 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ class Character
 	void attack(Enemy* enem);
 	
 	AWeapon *getWeapon(void) const;
-	int Character::getAP(void) const;
+	int getAP(void) const;
 	std::string const getName() const;
 	
-	Character &		Character::operator=(Character const & rhs);
+	Character &		operator=(Character const & rhs);
 };
 
 std::ostream &operator<<(std::ostream &out, Character const &chara);

@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 09:28:10 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 17:09:15 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ class PowerFist : public AWeapon
 	public:
 		PowerFist();
 		~PowerFist();
-		PowerFist::PowerFist(const PowerFist & src);
-		PowerFist & PowerFist::operator=(PowerFist const & rhs);
-		void attack();
+		PowerFist(const PowerFist & src);
+		PowerFist & operator=(PowerFist const & rhs);
+		void attack() const;
 };
 
 

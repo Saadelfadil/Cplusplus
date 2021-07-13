@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 16:45:02 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 17:01:07 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ PowerFist &		PowerFist::operator=(PowerFist const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-void PowerFist::attack()
+void PowerFist::attack() const
 {
 	std::cout << "* pschhh... SBAM! *" << std::endl;
 }
