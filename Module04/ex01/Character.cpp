@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 10:16:22 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 13:54:45 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void Character::equip(AWeapon* curWeapon)
 void Character::attack(Enemy* enem)
 {
 	enem->takeDamage(this->_curWeapon->getDamage());
+	std::cout << this->_name <<" attacks " << enem->getType() <<" with a " <<  this->getWeapon() << std::endl;
 }
 
 /*
