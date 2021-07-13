@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 09:26:58 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:44:57 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ PlasmaRifle::PlasmaRifle() : AWeapon("Plasma Rifle", 5, 21)
 
 PlasmaRifle::PlasmaRifle( const PlasmaRifle & src )
 {
-	
+	*this = src;
 }
 
 /*

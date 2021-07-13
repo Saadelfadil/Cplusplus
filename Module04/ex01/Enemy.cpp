@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 18:21:26 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:44:51 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Enemy::Enemy(int hp, std::string const & type) : _hp(hp), _type(type)
 
 Enemy::Enemy(const Enemy & src)
 {
-	
+	*this = src;
 }
 
 Enemy::Enemy()

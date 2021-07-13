@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 09:32:39 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:45:12 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ SuperMutant::SuperMutant() : Enemy(170, "Super Mutant")
 
 SuperMutant::SuperMutant(const SuperMutant & src)
 {
-	
+	*this = src;
 }
 
 /*

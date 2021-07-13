@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 16:27:13 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:44:41 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Character::Character(std::string const & name) : _name(name), _ap(40), _curWeapo
 
 Character::Character(const Character & src)
 {
-	
+	*this = src;
 }
 
 /*
@@ -74,9 +74,14 @@ void Character::equip(AWeapon* curWeapon)
 
 void Character::attack(Enemy* enem)
 {
-	// enem->takeDamage(this->_curWeapon->getDamage());
-	std::cout << this->_name <<" attacks " << enem->getType() <<" with a " <<  this->getWeapon() << std::endl;
+	if (this->_ap < this->_curWeapon->getAPCost())
+		return ;
+	this->_ap -= this->_curWeapon->getAPCost();
+	std::cout << this->_name <<" attacks " << enem->getType() <<" with a " <<  this->getWeapon()->getName() << std::endl;
 	this->_curWeapon->attack();
+	enem->takeDamage(this->_curWeapon->getDamage());
+	// if (enem->getHP() == 0)
+	// 	delete enem;
 }
 
 int Character::getAP(void) const
@@ -89,7 +94,12 @@ int Character::getAP(void) const
 
 std::ostream &operator<<(std::ostream &out, Character const &chara)
 {
-	out << chara.getName() << " has " << chara.getAP() << " AP and wields a " << chara.getWeapon() << std::endl;
+	out << chara.getName() << " has " << chara.getAP() << " AP and ";
+	if (chara.getWeapon())
+		out <<  "wields a " << chara.getWeapon()->getName();
+	else
+		out <<  "is unarmed";
+	out << std::endl;
 	return out;
 }
 /* ************************************************************************** */

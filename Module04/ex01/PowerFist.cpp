@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 09:28:41 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:45:02 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50)
 
 PowerFist::PowerFist( const PowerFist & src )
 {
-	
+	*this = src;
 }
 
 /*

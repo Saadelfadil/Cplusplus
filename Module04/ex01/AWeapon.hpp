@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 11:50:18 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:42:16 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class AWeapon
 		AWeapon(std::string const & name, int apcost, int damage);
 		~AWeapon();
 		AWeapon();
-		AWeapon::AWeapon(const AWeapon & src);
+		AWeapon::AWeapon(const AWeapon &src);
 		std::string getName() const;
 		int getAPCost() const;
 		int getDamage() const;

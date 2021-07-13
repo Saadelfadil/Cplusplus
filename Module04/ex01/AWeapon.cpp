@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 11:52:43 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 16:44:26 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ AWeapon::AWeapon(std::string const & name, int apcost, int damage) : _name(name)
 	
 }
 
-AWeapon::AWeapon( const AWeapon & src )
+AWeapon::AWeapon(const AWeapon &src)
 {
-	
+	*this = src;
 }
 
 
