@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 19:57:11 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 10:02:28 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,16 @@ class Character
 	~Character();
 	Character();
 	Character(const Character & src);
+	
 	void recoverAP();
 	void equip(AWeapon* curWeapon);
 	void attack(Enemy* enem);
-	std::string getName() const;
+	
+	std::string const getName() const;
 	Character &		Character::operator=(Character const & rhs);
 };
+
+std::ostream &operator<<(std::ostream &out, Character const &chara);
 
 
 #endif /* ******************************************************** SORCERER_H */

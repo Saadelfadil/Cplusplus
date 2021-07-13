@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/12 20:04:38 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/13 10:16:22 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,20 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Character::Character(std::string const & name) : _name(name)
+Character::Character() : _name(std::string()), _ap(0), _curWeapon(NULL)
 {
-	this->_ap = 40;
+	
+}
+
+Character::Character(std::string const & name) : _name(name), _ap(40), _curWeapon(NULL)
+{
+	
 }
 
 Character::Character(const Character & src)
 {
 	
 }
-
-Character::Character()
-{
-	
-}
-
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
