@@ -6,18 +6,18 @@
 #    By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/11 13:36:33 by sel-fadi          #+#    #+#              #
-#    Updated: 2021/07/14 15:04:29 by sel-fadi         ###   ########.fr        #
+#    Updated: 2021/07/14 17:46:53 by sel-fadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=sorcerer
+NAME=squad
 
-SRC = ISpaceMarine.cpp Squad.cpp main.cpp
+SRC = AssaultTerminator.cpp TacticalMarine.cpp Squad.cpp main.cpp
 
 all: $(NAME)
 
 $(NAME) : $(SRC)
-	clang++ -Wall -Wextra -Werror $(SRC) -o $(NAME)
+	clang++ -Wall -Wextra -Werror -g -fsanitize=address $(SRC) -o $(NAME)
 clean : 
 	@rm -rf $(NAME)
 fclean: clean

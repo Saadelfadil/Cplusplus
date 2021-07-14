@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Squad.cpp                                          :+:      :+:    :+:   */
+/*   AssaultTerminator.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 18:02:43 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 17:12:52 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Squad.hpp"
+#include "AssaultTerminator.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Squad::Squad() : _nbrSquad(0), _spaceMarine(0)
+AssaultTerminator::AssaultTerminator()
 {
-	
+	std::cout << "* teleports from space *" << std::endl;
 }
 
-Squad::Squad(const Squad &src)
+AssaultTerminator::AssaultTerminator(const AssaultTerminator &src)
 {
 	*this = src;
 }
@@ -30,19 +30,18 @@ Squad::Squad(const Squad &src)
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Squad::~Squad()
+AssaultTerminator::~AssaultTerminator()
 {
-	
+	std::cout << "I’ll be back..." << std::endl;
 }
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Squad &		Squad::operator=(Squad const & rhs)
+AssaultTerminator &		AssaultTerminator::operator=(AssaultTerminator const & rhs)
 {
-	this->_nbrSquad = rhs._nbrSquad;
-	this->_spaceMarine = rhs._spaceMarine;
+	this->assaultT = rhs.assaultT;
 	return *this;
 }
 
@@ -50,49 +49,25 @@ Squad &		Squad::operator=(Squad const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-int Squad::getCount() const
+AssaultTerminator* AssaultTerminator::clone() const
 {
-	return (this->_nbrSquad);
+	return (this->assaultT);
 }
 
-ISpaceMarine* Squad::getUnit(int nbrUnit) const
+void AssaultTerminator::battleCry() const
 {
-	if (this->_nbrSquad == 0 || nbrUnit < 0 || nbrUnit >= _nbrSquad)
-		return (0);
-	mylist *tmp = _spaceMarine;
-	for (int i = 0; i < nbrUnit; i++)
-	{
-		tmp = tmp->next;
-	}
-	return (tmp->marine);
+	std::cout << "This code is unclean. PURIFY IT!" << std::endl;
 }
 
-int Squad::push(ISpaceMarine* spaceMar)
+void AssaultTerminator::rangedAttack() const
 {
-	mylist *tmp = _spaceMarine;
-	mylist *new_marine;
-	if (!spaceMar)
-		return (_nbrSquad);
-	if (_nbrSquad == 0)
-	{
-		_spaceMarine = new mylist;
-		_spaceMarine->marine = spaceMar;
-		_spaceMarine->next = NULL;
-		_nbrSquad++;
-	}
-	for (int i = 0; i < this->_nbrSquad; i++)
-		if (this->_spaceMarine->marine == spaceMar)
-			return (this->_nbrSquad);
-	for (int i = 0; i < (_nbrSquad - 1); i++)
-		tmp = tmp->next;
-	new_marine = new mylist;
-	new_marine->marine = spaceMar;
-	new_marine->next = NULL; 
-	tmp->next = new_marine;
-	_nbrSquad++;
-	return(_nbrSquad);
+	std::cout << "* does nothing *" << std::endl;
 }
 
+void AssaultTerminator::meleeAttack() const
+{
+	std::cout << "* attacks with chainfists *" << std::endl;
+}
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

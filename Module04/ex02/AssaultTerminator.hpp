@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
+/*   AssaultTerminator.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 16:56:35 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 17:09:48 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TACTICALMARINE_HPP
-# define TACTICALMARINE_HPP
+#ifndef ASSAULTTERMINATOR_HPP
+# define ASSAULTTERMINATOR_HPP
 
 # include <iostream>
 # include <string>
 # include "ISpaceMarine.hpp"
 
-class TacticalMarine : public ISpaceMarine
+class AssaultTerminator : public ISpaceMarine
 {
 	private:
-		TacticalMarine *tacticalM;
+		AssaultTerminator *assaultT;
 	public:
-		TacticalMarine();
-		TacticalMarine(const TacticalMarine &src);
-		virtual ~TacticalMarine();
-		TacticalMarine* clone() const;
+		AssaultTerminator();
+		AssaultTerminator(const AssaultTerminator &src);
+		virtual ~AssaultTerminator();
+		AssaultTerminator* clone() const;
 		void battleCry() const;
 		void rangedAttack() const;
 		void meleeAttack() const;
-		TacticalMarine &	operator=(TacticalMarine const & rhs);
+		AssaultTerminator &	operator=(AssaultTerminator const & rhs);
 };
 
 
-#endif /* ******************************************************** TACTICALMARINE_H */
+#endif /* ******************************************************** ASSAULTTERMINATOR_H */

@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 14:58:02 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 17:05:13 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string>
 # include "ISquad.hpp"
 
-typedef struct mylist {
+struct mylist {
 	ISpaceMarine *marine;
 	struct mylist *next;	
 };
@@ -29,12 +29,11 @@ class Squad : public ISquad
 		mylist *_spaceMarine;
 	public:
 		Squad();
-		~Squad();
 		Squad(const Squad &src);
 		virtual ~Squad();
-		int getCount() const = 0;
-		ISpaceMarine* getUnit(int nbrUnit) const = 0;
-		int push(ISpaceMarine* spaceMar) = 0;
+		int getCount() const;
+		ISpaceMarine* getUnit(int nbrUnit) const;
+		int push(ISpaceMarine* spaceMar);
 		Squad &	operator=(Squad const & rhs);
 };
 

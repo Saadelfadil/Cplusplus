@@ -6,34 +6,30 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:36:40 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 11:35:42 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 17:54:38 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
-#include "AWeapon.hpp"
-#include "Enemy.hpp"
-#include "RadScorpion.hpp"
-#include "PlasmaRifle.hpp"
-#include "PowerFist.hpp"
+#include "AssaultTerminator.hpp"
+#include "TacticalMarine.hpp"
+#include "ISpaceMarine.hpp"
+#include "ISquad.hpp"
+#include "Squad.hpp"
 
 int main()
 {
-    Character* me = new Character("me");
-    std::cout << *me;
-    Enemy* b = new RadScorpion();
-    AWeapon* pr = new PlasmaRifle();
-    AWeapon* pf = new PowerFist();
-    me->equip(pr);
-    std::cout << *me;
-    me->equip(pf);
-    me->attack(b);
-    std::cout << *me;
-    me->equip(pr);
-    std::cout << *me;
-    me->attack(b);
-    std::cout << *me;
-    me->attack(b);
-    std::cout << *me;
+    ISpaceMarine* bob = new TacticalMarine;
+    ISpaceMarine* jim = new AssaultTerminator;
+    ISquad* vlc = new Squad;
+    vlc->push(bob);
+    vlc->push(jim);
+    for (int i = 0; i < vlc->getCount(); ++i)
+    {
+        ISpaceMarine* cur = vlc->getUnit(i);
+        cur->battleCry();
+        cur->rangedAttack();
+        cur->meleeAttack();
+    }
+    delete vlc;
     return 0;
 }
