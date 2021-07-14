@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:36:40 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/13 18:58:55 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 09:56:24 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int main()
     std::cout << *me;
     me->attack(b);
     std::cout << *me;
-    delete b;
+    // delete b;
     return 0;
 }
