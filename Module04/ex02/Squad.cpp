@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 13:58:37 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 15:24:31 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Squad::Squad() : _nbrSquad(0), _spaceMarine(nullptr)
+Squad::Squad() : _nbrSquad(0), _spaceMarine(0)
 {
 	
 }
@@ -58,34 +58,31 @@ int Squad::getCount() const
 ISpaceMarine* Squad::getUnit(int nbrUnit) const
 {
 	if (this->_nbrSquad == 0 || nbrUnit < 0 || nbrUnit >= _nbrSquad)
-		return (nullptr);
-	return (this->_spaceMarine[nbrUnit]);
+		return (0);
+	mylist *tmp = _spaceMarine;
+	for (int i = 0; i < nbrUnit; i++)
+	{
+		tmp = tmp->next;
+	}
+	return (tmp->marine);
 }
 
 int Squad::push(ISpaceMarine* spaceMar)
 {
+	mylist *tmp = _spaceMarine;
 	if (!spaceMar)
-		return (this->_nbrSquad);
-	if (this->_spaceMarine)
+		return (_nbrSquad);
+	for (int i = 0; i < this->_nbrSquad; i++)
+		if (this->_spaceMarine->marine == spaceMar)
+			return (this->_nbrSquad);
+	for (int i = 0; i < _nbrSquad; i++)
 	{
-		for (int i = 0; i < this->_nbrSquad; i++)
-			if (this->_spaceMarine[i] == spaceMar)
-				return (this->_nbrSquad);
-		ISpaceMarine **cpy = new ISpaceMarine*[this->_nbrSquad + 1];
-		for (int i = 0; i < this->_nbrSquad; i++)
-			cpy[i] = this->_spaceMarine[i];
-		delete[] this->_spaceMarine;
-		this->_spaceMarine = cpy;
-		this->_spaceMarine[this->_nbrSquad] = spaceMar;
-		this->_nbrSquad++;
+		tmp = tmp->next;
 	}
-	else
-	{
-		this->_spaceMarine = new ISpaceMarine*[1];
-		this->_spaceMarine[0] = spaceMar;
-		this->_nbrSquad = 1;
-	}
-	return (this->_nbrSquad);
+	tmp->next->marine = spaceMar;
+	tmp->next->next = NULL;
+	_nbrSquad++;
+	return(_nbrSquad);
 }
 
 

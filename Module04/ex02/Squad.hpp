@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 13:41:52 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 14:58:02 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,16 @@
 # include <string>
 # include "ISquad.hpp"
 
+typedef struct mylist {
+	ISpaceMarine *marine;
+	struct mylist *next;	
+};
+
 class Squad : public ISquad
 {
 	private:
 		int _nbrSquad;
-		ISpaceMarine **_spaceMarine;
+		mylist *_spaceMarine;
 	public:
 		Squad();
 		~Squad();
