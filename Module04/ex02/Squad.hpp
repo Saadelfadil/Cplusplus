@@ -1,30 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   Squad.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 13:25:01 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 13:17:52 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-# define ISQUAD_HPP
+#ifndef SQUAD_HPP
+# define SQUAD_HPP
 
 # include <iostream>
 # include <string>
-# include "ISpaceMarine.hpp"
+# include "ISquad.hpp"
 
-class ISquad
+class Squad : public ISquad
 {
+	private:
+		int _nbrSquad;
+		ISpaceMarine *_spaceMarine;
 	public:
-		virtual ~ISquad() {}
-		virtual int getCount() const = 0;
-		virtual ISpaceMarine* getUnit(int) const = 0;
-		virtual int push(ISpaceMarine*) = 0;
+		Squad();
+		~Squad();
+		Squad(const Squad &src);
+		virtual ~Squad();
+		int getCount() const = 0;
+		ISpaceMarine* getUnit(int) const = 0;
+		int push(ISpaceMarine* spaceMar) = 0;
+		Squad &	operator=(Squad const & rhs);
 };
 
 
-#endif /* ******************************************************** ISQUAD_H */
+#endif /* ******************************************************** SQUAD_H */
