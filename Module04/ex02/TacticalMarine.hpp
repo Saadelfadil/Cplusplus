@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
+/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 16:17:27 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 16:33:37 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISPACEMARINE_HPP
-# define ISPACEMARINE_HPP
+#ifndef TACTICALMARINE_HPP
+# define TACTICALMARINE_HPP
 
 # include <iostream>
 # include <string>
+# include "ISpaceMarine.hpp"
 
-class ISpaceMarine
+class TacticalMarine : public ISpaceMarine
 {
+	private:
 	public:
-		virtual ~ISpaceMarine() {}
-		virtual ISpaceMarine* clone() const = 0;
-		virtual void battleCry() const = 0;
-		virtual void rangedAttack() const = 0;
-		virtual void meleeAttack() const = 0;
+		TacticalMarine();
+		TacticalMarine(const TacticalMarine &src);
+		virtual ~TacticalMarine();
+		TacticalMarine* clone() const;
+		void battleCry() const;
+		void rangedAttack() const;
+		void meleeAttack() const;
+		TacticalMarine &	operator=(TacticalMarine const & rhs);
 };
 
 
-#endif /* ******************************************************** ISPACEMARINE_H */
+#endif /* ******************************************************** TACTICALMARINE_H */
