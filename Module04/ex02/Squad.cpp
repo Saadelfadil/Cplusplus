@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 13:29:50 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 13:58:37 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,8 @@ Squad::~Squad()
 
 Squad &		Squad::operator=(Squad const & rhs)
 {
-	this->_name = rhs._name;
-	this->_apcost = rhs._apcost;
-	this->_damage = rhs._damage;
+	this->_nbrSquad = rhs._nbrSquad;
+	this->_spaceMarine = rhs._spaceMarine;
 	return *this;
 }
 
@@ -56,14 +55,37 @@ int Squad::getCount() const
 	return (this->_nbrSquad);
 }
 
-int Squad::getAPCost() const
+ISpaceMarine* Squad::getUnit(int nbrUnit) const
 {
-	return (this->_apcost);
+	if (this->_nbrSquad == 0 || nbrUnit < 0 || nbrUnit >= _nbrSquad)
+		return (nullptr);
+	return (this->_spaceMarine[nbrUnit]);
 }
 
-int Squad::getDamage() const
+int Squad::push(ISpaceMarine* spaceMar)
 {
-	return (this->_damage);
+	if (!spaceMar)
+		return (this->_nbrSquad);
+	if (this->_spaceMarine)
+	{
+		for (int i = 0; i < this->_nbrSquad; i++)
+			if (this->_spaceMarine[i] == spaceMar)
+				return (this->_nbrSquad);
+		ISpaceMarine **cpy = new ISpaceMarine*[this->_nbrSquad + 1];
+		for (int i = 0; i < this->_nbrSquad; i++)
+			cpy[i] = this->_spaceMarine[i];
+		delete[] this->_spaceMarine;
+		this->_spaceMarine = cpy;
+		this->_spaceMarine[this->_nbrSquad] = spaceMar;
+		this->_nbrSquad++;
+	}
+	else
+	{
+		this->_spaceMarine = new ISpaceMarine*[1];
+		this->_spaceMarine[0] = spaceMar;
+		this->_nbrSquad = 1;
+	}
+	return (this->_nbrSquad);
 }
 
 
