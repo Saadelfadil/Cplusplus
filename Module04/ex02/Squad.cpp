@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/14 18:02:43 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/14 18:30:09 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ Squad::Squad() : _nbrSquad(0), _spaceMarine(0)
 
 Squad::Squad(const Squad &src)
 {
+	// this->_nbrSquad = 0;
+	// for (int i = 0; i < src.getCount(); i++)
+	// 	this->push(src.getUnit(i)->clone());
 	*this = src;
 }
 
@@ -32,7 +35,17 @@ Squad::Squad(const Squad &src)
 
 Squad::~Squad()
 {
-	
+	mylist *tmp;
+	if (this->_spaceMarine)
+	{
+		for (int i = 0; i < _nbrSquad; i++)
+		{
+			delete this->_spaceMarine->marine;
+			tmp = _spaceMarine->next;
+			delete _spaceMarine;
+			_spaceMarine = tmp;
+		}
+	}
 }
 
 /*
