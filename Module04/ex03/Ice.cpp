@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/15 13:24:47 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/15 18:11:59 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Ice::Ice() : _xp(0), _name("ice")
+Ice::Ice() : AMateria("ice")
 {
 	
 }
@@ -25,6 +25,7 @@ Ice::Ice(const Ice &src)
 {
 	*this = src;
 }
+
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -41,8 +42,8 @@ Ice::~Ice()
 
 Ice &		Ice::operator=(Ice const & rhs)
 {
-	this->_type = rhs._type;
-	this->_xp = rhs._xp;
+	this->_type = "ice";
+	this->_xp = obj._xp;
 	return *this;
 }
 
@@ -60,13 +61,14 @@ unsigned int Ice::getXP(void) const
 	return (this->_xp);
 }
 
-Ice * Ice::clone(void) const
+AMateria* Ice::clone() const
 {
-	
+	return new Ice(this->_xp);
 }
 
 void Ice::use(ICharacter &target)
 {
+	AMateria::use(target);
 	std::cout << "* shoots an ice bolt at "<< target._name << " *" << std::endl;
 }
 

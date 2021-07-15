@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/15 14:52:27 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/15 15:26:55 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cure.hpp"
+#include "CHARACTER.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cure::Cure() : _xp(0), _name("Cure")
+Character::Character() : _xp(0)
 {
 	
 }
 
-Cure::Cure(const Cure &src)
+Character::Character(const Character &src)
 {
 	*this = src;
 }
@@ -30,7 +30,7 @@ Cure::Cure(const Cure &src)
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-Cure::~Cure()
+Character::~Character()
 {
 	
 }
@@ -39,7 +39,7 @@ Cure::~Cure()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-Cure &		Cure::operator=(Cure const & rhs)
+Character &		Character::operator=(Character const & rhs)
 {
 	this->_type = rhs._type;
 	this->_xp = rhs._xp;
@@ -50,25 +50,24 @@ Cure &		Cure::operator=(Cure const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string const & Cure::getType(void) const
+std::string const & Character::getType(void) const
 {
 	return (this->_type);
 }
 
-unsigned int Cure::getXP(void) const
+unsigned int Character::getXP(void) const
 {
 	return (this->_xp);
 }
 
-Cure * Cure::clone(void) const
+Character * Character::clone(void) const
 {
 	
 }
 
-void Cure::use(ICharacter &target)
+void Character::use(ICharacter &target)
 {
-	
-	std::cout << "* heals "<< target._name << "'s wounds *" << std::endl;
+
 }
 
 /*

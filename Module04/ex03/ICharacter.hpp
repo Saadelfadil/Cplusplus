@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/15 17:50:03 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/15 15:25:27 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
 # include <iostream>
 # include <string>
-# include "ICharacter.hpp"
+# include "AMateria.hpp"
 
-class AMateria
+class ICharacter
 {
-	private:
-		AMateria();
-	protected:
-		std::string _type;
-		unsigned int _xp;
 	public:
-		AMateria(std::string const &type);
-		AMateria(const AMateria &src);
-		virtual ~AMateria();
-
-		std::string const &getType(void) const;
-		unsigned int getXP(void) const;
-
-		virtual AMateria *clone(void) const = 0;
-		virtual void use(ICharacter &target);
-		AMateria & operator=(AMateria const & rhs);
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
 };
 
 
-#endif /* ******************************************************** AMATERIA_H */
+#endif /* ******************************************************** ICHARACTER_H */
