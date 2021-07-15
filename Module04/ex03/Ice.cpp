@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/15 18:11:59 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/15 19:22:23 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ unsigned int Ice::getXP(void) const
 
 AMateria* Ice::clone() const
 {
-	return new Ice(this->_xp);
+	return (new Ice(*this));
 }
 
 void Ice::use(ICharacter &target)

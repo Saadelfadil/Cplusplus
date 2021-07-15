@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/15 14:52:27 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/15 19:25:49 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Cure::Cure() : _xp(0), _name("Cure")
+Cure::Cure() : AMateria("Cure")
 {
 	
 }
@@ -25,6 +25,7 @@ Cure::Cure(const Cure &src)
 {
 	*this = src;
 }
+
 
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
@@ -41,8 +42,8 @@ Cure::~Cure()
 
 Cure &		Cure::operator=(Cure const & rhs)
 {
-	this->_type = rhs._type;
-	this->_xp = rhs._xp;
+	this->_type = "Cure";
+	this->_xp = obj._xp;
 	return *this;
 }
 
@@ -60,14 +61,14 @@ unsigned int Cure::getXP(void) const
 	return (this->_xp);
 }
 
-Cure * Cure::clone(void) const
+AMateria* Cure::clone() const
 {
-	
+	return (new Cure(*this));
 }
 
 void Cure::use(ICharacter &target)
 {
-	
+	AMateria::use(target);
 	std::cout << "* heals "<< target._name << "'s wounds *" << std::endl;
 }
 
