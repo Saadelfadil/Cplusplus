@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/15 13:11:09 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/15 13:24:47 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ Ice * Ice::clone(void) const
 
 void Ice::use(ICharacter &target)
 {
-
+	std::cout << "* shoots an ice bolt at "<< target._name << " *" << std::endl;
 }
 
 /*

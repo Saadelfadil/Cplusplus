@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria copy.cpp                                  :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:55:09 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/07/15 13:10:32 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/07/15 13:27:02 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include "Cure.hpp"
 
 /*
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-AMateria::AMateria() : _xp(0)
+Cure::Cure() : _xp(0), _name("Cure")
 {
 	
 }
 
-AMateria::AMateria(const AMateria &src)
+Cure::Cure(const Cure &src)
 {
 	*this = src;
 }
@@ -30,7 +30,7 @@ AMateria::AMateria(const AMateria &src)
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
-AMateria::~AMateria()
+Cure::~Cure()
 {
 	
 }
@@ -39,7 +39,7 @@ AMateria::~AMateria()
 ** --------------------------------- OVERLOAD ---------------------------------
 */
 
-AMateria &		AMateria::operator=(AMateria const & rhs)
+Cure &		Cure::operator=(Cure const & rhs)
 {
 	this->_type = rhs._type;
 	this->_xp = rhs._xp;
@@ -50,24 +50,24 @@ AMateria &		AMateria::operator=(AMateria const & rhs)
 ** --------------------------------- METHODS ----------------------------------
 */
 
-std::string const & AMateria::getType(void) const
+std::string const & Cure::getType(void) const
 {
 	return (this->_type);
 }
 
-unsigned int AMateria::getXP(void) const
+unsigned int Cure::getXP(void) const
 {
 	return (this->_xp);
 }
 
-AMateria * AMateria::clone(void) const
+Cure * Cure::clone(void) const
 {
 	
 }
 
-void AMateria::use(ICharacter &target)
+void Cure::use(ICharacter &target)
 {
-
+	std::cout << "* heals "<< target._name << "'s wounds *" << std::endl;
 }
 
 /*
