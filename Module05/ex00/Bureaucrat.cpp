@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/02 11:35:28 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/02 11:39:12 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ Bureaucrat::GradeTooHighException::GradeTooHighException() throw()
     
 }
 
-Bureaucrat::GradeTooHighException::GradeTooHighException(const GradeTooHighException &obj) throw()
+Bureaucrat::GradeTooHighException::GradeTooHighException(const GradeTooHighException &) throw()
 {
     
 }
@@ -128,7 +128,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException() throw()
     
 }
 
-Bureaucrat::GradeTooLowException::GradeTooLowException(const GradeTooLowException &obj) throw()
+Bureaucrat::GradeTooLowException::GradeTooLowException(const GradeTooLowException &) throw()
 {
 
 }
@@ -149,3 +149,9 @@ Bureaucrat::GradeTooLowException & Bureaucrat::GradeTooLowException::operator=(c
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+
+std::ostream	&operator<<(std::ostream & out, const Bureaucrat &obj)
+{
+	out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << std::endl;
+	return (out);
+}
