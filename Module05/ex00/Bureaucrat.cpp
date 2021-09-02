@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/02 11:42:00 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/02 11:42:45 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int Bureaucrat::getGrade() const
 
 void Bureaucrat::incrementGrade()
 {
-    if (this->_grade - 1 < 0)
+    if (this->_grade - 1 < 1)
         throw Bureaucrat::GradeTooHighException();
     else
 	    this->_grade -= 1;
