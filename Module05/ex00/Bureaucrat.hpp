@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/02 11:02:57 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/02 11:32:20 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,19 @@ class Bureaucrat {
 
         class GradeTooHighException : public std::exception{
             public:
-                virtual const char *what() const throw()
-                {
-                    return ("Problem is grade is under 1");
-                }
+                const char *what() const throw();
+                GradeTooHighException () throw();
+                GradeTooHighException (const GradeTooHighException &obj) throw();
+                GradeTooHighException& operator= (const GradeTooHighException &obj) throw();
+                virtual ~GradeTooHighException() throw();
         };
         class GradeTooLowException : public std::exception{
             public:
-                virtual const char *what() const throw()
-                {
-                    return ("Problem is grade is up 150");
-                }
+                const char *what() const throw();
+                GradeTooLowException () throw();
+				GradeTooLowException (const GradeTooLowException&) throw();
+				GradeTooLowException& operator= (const GradeTooLowException&) throw();
+				virtual ~GradeTooLowException() throw();
         };
 };
 
