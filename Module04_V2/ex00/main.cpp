@@ -3,27 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcadmin <mcadmin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:36:40 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/08/12 18:26:20 by mcadmin          ###   ########.fr       */
+/*   Updated: 2021/09/03 15:11:08 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
+    
+    const WrongAnimal* wrongMeta = new WrongAnimal();
+    const WrongAnimal* cuta = new WrongCat();
+    
     const Animal* meta = new Animal();
-    const Animal* j = new Dog();
     const Animal* i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
+    const Animal* j = new Dog();
     std::cout << i->getType() << " " << std::endl;
+    std::cout << j->getType() << " " << std::endl;
     i->makeSound(); //will output the cat sound!
-    j->makeSound();
+    j->makeSound(); //will output the dog sound!
     meta->makeSound();
+    
+    std::cout << wrongMeta->getType() << " " << std::endl;
+    cuta->makeSound(); //will output the cat sound!
+    
     // delete meta;
     // delete j;
     // delete i;
