@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcadmin <mcadmin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:54:49 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/08/13 11:42:57 by mcadmin          ###   ########.fr       */
+/*   Updated: 2021/09/03 16:38:13 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,16 @@ Cat &	Cat::operator=(Cat const & rhs )
 void Cat::makeSound() const
 {
 	std::cout << "Miaawww iam cute Cat..." << std::endl;
+}
+
+std::string Cat::getIdea( int i ) const
+{
+	return (this->ideas[i]);
+}
+
+void Cat::setIdea(int i, std::string idea)
+{
+	this->ideas[i] = idea;
 }
 
 /*
