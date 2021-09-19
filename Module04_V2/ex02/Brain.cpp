@@ -41,7 +41,8 @@ Brain::~Brain()
 
 Brain &	Brain::operator=(Brain const & rhs )
 {
-	this->ideas[99] = rhs.ideas[99];
+	for (int i = 0; i < 100; i++)
+		this->ideas[i] = rhs.ideas[i];
 	return *this;
 }
 
@@ -49,7 +50,15 @@ Brain &	Brain::operator=(Brain const & rhs )
 ** --------------------------------- METHODS ----------------------------------
 */
 
+std::string Brain::getIdea( int i ) const
+{
+	return (this->ideas[i]);
+}
 
+void Brain::setIdea(int i, std::string idea)
+{
+	this->ideas[i] = idea;
+}
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */

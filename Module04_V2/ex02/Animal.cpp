@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcadmin <mcadmin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:54:49 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/08/13 12:04:25 by mcadmin          ###   ########.fr       */
+/*   Updated: 2021/09/19 11:54:17 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,34 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
+Animal::Animal()
+{
+	std::cout << "Hello from Animal CONSTRUCTOR ..." << std::endl;
+}
+
+Animal::Animal(const Animal &src)
+{
+	*this = src;
+}
+
 /*
 ** -------------------------------- DESTRUCTOR --------------------------------
 */
 
+Animal::~Animal()
+{
+	std::cout << "Hello from Animal DESTRUCTOR ..." << std::endl;
+}
 
 /*
 ** --------------------------------- OVERLOAD ---------------------------------
 */
+
+Animal &	Animal::operator=(Animal const & rhs )
+{
+	this->_type = rhs._type;
+	return *this;
+}
 
 /*
 ** --------------------------------- METHODS ----------------------------------
@@ -33,6 +53,7 @@ std::string Animal::getType() const
 {
 	return this->_type;
 }
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

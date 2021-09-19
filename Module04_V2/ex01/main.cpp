@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:36:40 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/03 16:32:17 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/19 11:29:22 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,14 @@ int main()
     // Cat cat2 = cat;
     // std::cout << cat2.getIdea(0) << "\n";
 
-    Dog basic;
-    basic.setIdea(1, "Dog idea");
-    std::cout << basic.getIdea(1) << "\n";
-    Dog tmp = basic;
-    std::cout << tmp.getIdea(1) << "\n";
+    Cat basic;
+    basic.getBrain()->setIdea(1, "Cat idea");
+    std::cout << basic.getBrain()->getIdea(1) << "\n";
+    Cat tmp = basic;
+    Cat tmp1(basic);
+    std::cout << tmp.getBrain()->getIdea(2) << "\n";
 
+    std::cout << basic.getBrain()->getIdea(1) << std::endl;
+    std::cout << tmp.getBrain()->getIdea(1) << std::endl;
+    std::cout << tmp1.getBrain()->getIdea(1) << std::endl;
 }

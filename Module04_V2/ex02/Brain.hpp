@@ -24,6 +24,8 @@ class Brain
 		Brain();
 		Brain(Brain const &src);
 		virtual ~Brain();
+		std::string getIdea( int i ) const;
+		void setIdea( int i, std::string idea );
 		Brain &	operator=(Brain const & rhs);
 };
 

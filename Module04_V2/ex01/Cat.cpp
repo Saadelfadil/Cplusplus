@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:54:49 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/03 16:38:13 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/19 11:25:20 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ Cat::~Cat()
 
 Cat &	Cat::operator=(Cat const & rhs )
 {
-	this->bra = new Brain(*rhs.bra);
+	this->bra = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->bra->setIdea(i, rhs.bra->getIdea(i));
 	return *this;
 }
 /*
@@ -56,15 +58,8 @@ void Cat::makeSound() const
 	std::cout << "Miaawww iam cute Cat..." << std::endl;
 }
 
-std::string Cat::getIdea( int i ) const
-{
-	return (this->ideas[i]);
-}
 
-void Cat::setIdea(int i, std::string idea)
-{
-	this->ideas[i] = idea;
-}
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

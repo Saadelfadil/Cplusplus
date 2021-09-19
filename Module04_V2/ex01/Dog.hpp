@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/03 16:35:03 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/17 18:12:54 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ class Dog : public Animal
 		Dog();
 		Dog(Dog const &src);
 		~Dog();
+		Brain* getBrain() const{return this->bra;};
 		Dog &	operator=(Dog const & rhs);
-		std::string getIdea( int i ) const;
 		void makeSound() const;
 };
 

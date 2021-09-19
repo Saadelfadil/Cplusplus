@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcadmin <mcadmin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 14:54:49 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/08/13 11:42:41 by mcadmin          ###   ########.fr       */
+/*   Updated: 2021/09/19 11:25:24 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ Dog::~Dog()
 
 Dog &	Dog::operator=(Dog const & rhs )
 {
-	this->bra = new Brain(*rhs.bra);
+	this->bra = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->bra->setIdea(i, rhs.bra->getIdea(i));
 	return *this;
 }
 
@@ -56,6 +58,7 @@ void Dog::makeSound() const
 {
 	std::cout << "Haaaw haaaw iam a bad Dog..." << std::endl;
 }
+
 
 /*
 ** --------------------------------- ACCESSOR ---------------------------------

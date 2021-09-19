@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcadmin <mcadmin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/08/12 22:31:09 by mcadmin          ###   ########.fr       */
+/*   Updated: 2021/09/17 18:12:54 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Dog : public Animal
 		Dog();
 		Dog(Dog const &src);
 		~Dog();
+		Brain* getBrain() const{return this->bra;};
 		Dog &	operator=(Dog const & rhs);
 		void makeSound() const;
 };

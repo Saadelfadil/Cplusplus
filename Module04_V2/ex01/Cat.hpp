@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/11 13:13:46 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/03 16:34:57 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/17 18:13:29 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Cat : public Animal
 		Cat(Cat const &src);
 		~Cat();
 		Cat &	operator=(Cat const & rhs);
-		std::string getIdea( int i ) const;
+		Brain *getBrain(){return this->bra;};
 		void makeSound() const;
 };
 
