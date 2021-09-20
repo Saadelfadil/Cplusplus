@@ -16,6 +16,8 @@
 # include <iostream>
 # include <string>
 
+class Form;
+
 class Bureaucrat {
     private :
         const std::string _name;

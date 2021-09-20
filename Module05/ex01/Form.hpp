@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <string>
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
     private :
@@ -24,15 +27,16 @@ class Form {
         const int _gradeExec;
     public :
         virtual ~Form();
-        Form();
-        Form(std::string name, bool inde,const int gradeSign, const int gradeExec);
+        Form(std::string name, const int gradeSign, const int gradeExec);
+        // Form();
         Form(Form const &obj);
         Form & operator = (Form const &obj);
 
-        const std::string getName() const;
-        int         getGradeSign() const;
-        const int         getInde() const;
-        const int         getGradeSign() const;
+        const std::string   getName() const;
+        bool                getInde() const;
+        int                 getGradeSign() const;
+        int                 getGradeExec() const;
+        void                beSigned(Bureaucrat &bureau);
 
         class GradeTooHighException : public std::exception{
             public:

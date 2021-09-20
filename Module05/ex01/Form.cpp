@@ -16,7 +16,7 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Form::Form(std::string name, bool inde, const int gradeSign, const int gradeExec) : _name(name), _inde(false), _gradeSign(gradeSign), _gradeExec(gradeExec)
+Form::Form(const std::string name, const int gradeSign, const int gradeExec) : _name(name), _inde(false), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
     if (gradeSign < 1 || gradeExec < 1)
         throw Form::GradeTooHighException();
@@ -24,16 +24,14 @@ Form::Form(std::string name, bool inde, const int gradeSign, const int gradeExec
         throw Form::GradeTooLowException();;
 }
 
-Form::Form()
-{
-}
+// Form::Form()
+// {
+// 	std::cout << "Hello form the Constructor" << std::endl;
+// }
 
-Form::Form(Form const &obj)
+Form::Form(Form const &obj) : _inde(false), _gradeSign(obj._gradeSign), _gradeExec(obj._gradeExec)
 {
-    if (obj.getGrade() < 1)
-		throw Form::GradeTooHighException();
-	else if (obj.getGrade() > 150)
-		throw Form::GradeTooLowException();
+	*this = obj;
 }
 
 /*
@@ -51,9 +49,7 @@ Form::~Form()
 Form & Form::operator = ( Form const &obj)
 {
     if (this != &obj)
-    {
-        this->_grade = obj._grade;
-    }
+		this->_inde = obj._inde;
     return *this;
 }
 
@@ -66,9 +62,26 @@ const std::string Form::getName() const
 	return (this->_name);
 }
 
-int Form::getGrade() const
+bool   Form::getInde() const
 {
-	return (this->_grade);
+	return (this->_inde);
+}
+
+int Form::getGradeSign() const
+{
+	return (this->_gradeSign);
+}
+
+int Form::getGradeExec() const
+{
+	return (this->_gradeExec);
+}
+
+void Form::beSigned(Bureaucrat &bureau)
+{
+	if (bureau.getGrade() > this->_gradeSign)
+        throw Form::GradeTooLowException();
+	this->_inde = true;
 }
 
 /*
@@ -136,6 +149,6 @@ Form::GradeTooLowException & Form::GradeTooLowException::operator=(const GradeTo
 
 std::ostream	&operator<<(std::ostream & out, const Form &obj)
 {
-	out << obj.getName() << ", bureaucrat grade " << obj.getGrade() << std::endl;
+	out << obj.getName() << ", bureaucrat grade " << obj.getInde() << "grade to sign : "<< obj.getGradeSign() << ", grade to exec : " << obj.getGradeExec() << std::endl;
 	return (out);
 }
