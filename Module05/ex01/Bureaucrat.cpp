@@ -92,7 +92,7 @@ void Bureaucrat::signForm(Form const &form)
     if (form.getInde())
         std::cout << this->_name << " signs " << form.getName() << std::endl;
     else
-        std::cout << this->_name << " cannot sign " << form.getName() << " because " << std::endl;
+        std::cout << this->_name << " cannot sign " << form.getName() << " because." << std::endl;
 }
 
 /*
