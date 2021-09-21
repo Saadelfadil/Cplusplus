@@ -11,49 +11,39 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
+ 
 int main()
 {
-    try {
-        Form		form1("chadat sokna", 188, 1);
+    Bureaucrat bure_a("bure_A", 2);
+    Bureaucrat bure_b("bure_B", 70);
+    Bureaucrat bure_c("bure_C", 139);
+ 
+    Form form_a("form_A", 10, 10);
+    Form form_b("form_B", 71, 10);
+    Form form_c("form_C", 130, 140);
+    try
+    {
+        bure_a.signForm(form_a);
     }
     catch(const std::exception& e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
-
-    try {
-	    Form		form2("3aqd izdiad", 1, 1);
+    try
+    {
+        bure_b.signForm(form_b);
     }
     catch(const std::exception& e)
     {
-        std::cout << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
-    
-	Bureaucrat	bureaucrat1("qaid", 1);
-	Bureaucrat	bureaucrat2("mqadem", 149);
-
-	try
-	{
-		form2.beSigned(bureaucrat2);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	try
-	{
-		form2.beSigned(bureaucrat1);
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
-	
-	std::cout << bureaucrat1 << std::endl;
-	std::cout << bureaucrat2 << std::endl;
-	std::cout << form1 << std::endl;
-	std::cout << form2 << std::endl;
-	return 0;
+    try
+    {
+        bure_c.signForm(form_c);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 }
