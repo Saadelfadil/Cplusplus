@@ -16,18 +16,20 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
+Form::Form() : _name(NULL), _gradeSign(0), _gradeExec(0)
+{
+	this->_inde = false;
+	std::cout << "Hello form the Default CONSTRUCTOR" << std::endl;
+}
+
 Form::Form(const std::string name, const int gradeSign, const int gradeExec) : _name(name), _inde(false), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
     if (gradeSign < 1 || gradeExec < 1)
         throw Form::GradeTooHighException();
     else if (gradeSign > 150 || gradeExec > 150)
-        throw Form::GradeTooLowException();;
+        throw Form::GradeTooLowException();
 }
 
-// Form::Form()
-// {
-// 	std::cout << "Hello form the CONSTRUCTOR" << std::endl;
-// }
 
 Form::Form(Form const &obj) : _inde(false), _gradeSign(obj._gradeSign), _gradeExec(obj._gradeExec)
 {
@@ -77,12 +79,12 @@ int Form::getGradeExec() const
 	return (this->_gradeExec);
 }
 
-Form & Form::beSigned(Bureaucrat &bureau)
+void Form::beSigned(Bureaucrat &bureau)
 {
 	if (bureau.getGrade() > this->_gradeSign)
         throw Form::GradeTooLowException();
-	this->_inde = true;
-	return *this;
+	else
+		this->_inde = true;
 }
 
 
@@ -151,6 +153,6 @@ Form::GradeTooLowException & Form::GradeTooLowException::operator=(const GradeTo
 
 std::ostream	&operator<<(std::ostream & out, const Form &obj)
 {
-	out << obj.getName() << ", bureaucrat grade " << obj.getInde() << "grade to sign : "<< obj.getGradeSign() << ", grade to exec : " << obj.getGradeExec() << std::endl;
+	out << obj.getName() << ", bureaucrat grade " << obj.getInde() << " grade to sign : "<< obj.getGradeSign() << ", grade to exec : " << obj.getGradeExec() << std::endl;
 	return (out);
 }

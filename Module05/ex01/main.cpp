@@ -14,63 +14,46 @@
 
 int main()
 {
-    Bureaucrat* bureaucrat = new Bureaucrat("Bob", 2);
-    Bureaucrat* stagiaire = new Bureaucrat("Cafe", 149);
-    
-    // Test --
-    try
-    {
-        std::cout << *bureaucrat;
-        bureaucrat->incrementGrade();
-        std::cout << bureaucrat->getName() << " upgraded ! Felicitations! " << std::endl;
-        std::cout << *bureaucrat;
-        bureaucrat->incrementGrade();
-        std::cerr << "[+][1] Exception does'nt work nicely. " << std::endl;
+    try {
+        Form		form1("chadat sokna", 188, 1);
     }
-    catch (std::exception & e)
+    catch(const std::exception& e)
     {
-        std::cerr << "[1] Exception : " << e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }
 
-    // Test ++
-    try
-    {
-        std::cout << *stagiaire;
-        stagiaire->decrementGrade();
-        std::cout << stagiaire->getName() << " downgraded ! That's suck! " << std::endl;
-        std::cout << *stagiaire;
-        stagiaire->decrementGrade();
-        std::cerr << "[+][2] Exception does'nt work nicely. " << std::endl;
+    try {
+	    Form		form2("3aqd izdiad", 1, 1);
     }
-    catch (std::exception & e)
+    catch(const std::exception& e)
     {
-        std::cerr << "[2] Exception : " << e.what() << std::endl;
-    }
-
-    Bureaucrat* toHigh;
-    Bureaucrat* toLow;
-
-    // Test ToHigh
-    try
-    {
-        toHigh = new Bureaucrat("ToHigh", 0);
-        std::cerr << "[+][3] Exception does'nt work nicely. " << std::endl;
-    }
-    catch (std::exception & e)
-    {
-        std::cerr << "[3] Exception : " << e.what() << std::endl;
+        std::cout << e.what() << std::endl;
     }
     
-    try
-    {
-        toLow = new Bureaucrat("ToLow", 420);
-        std::cerr << "[+][4] Exception does'nt work nicely. " << std::endl;
-    }
-    catch (std::exception & e)
-    {
-        std::cerr << "[4] Exception : " << e.what() << std::endl;
-    }
-    
-    delete bureaucrat;
-    delete stagiaire;
+	Bureaucrat	bureaucrat1("qaid", 1);
+	Bureaucrat	bureaucrat2("mqadem", 149);
+
+	try
+	{
+		form2.beSigned(bureaucrat2);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	try
+	{
+		form2.beSigned(bureaucrat1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
+	
+	std::cout << bureaucrat1 << std::endl;
+	std::cout << bureaucrat2 << std::endl;
+	std::cout << form1 << std::endl;
+	std::cout << form2 << std::endl;
+	return 0;
 }

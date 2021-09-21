@@ -26,9 +26,9 @@ class Form {
         const int _gradeSign;
         const int _gradeExec;
     public :
+        Form();
         virtual ~Form();
         Form(std::string name, const int gradeSign, const int gradeExec);
-        // Form();
         Form(Form const &obj);
         Form & operator = (Form const &obj);
 
@@ -36,7 +36,7 @@ class Form {
         bool                getInde() const;
         int                 getGradeSign() const;
         int                 getGradeExec() const;
-        Form &              beSigned(Bureaucrat &bureau);
+        void                beSigned(Bureaucrat &bureau);
 
         class GradeTooHighException : public std::exception{
             public:
