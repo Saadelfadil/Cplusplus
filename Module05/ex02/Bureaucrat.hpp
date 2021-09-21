@@ -6,15 +6,17 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/02 11:32:20 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/21 19:03:13 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_H
-# define BUREAUCRAT_H
+#pragma once
 
 # include <iostream>
 # include <string>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
     private :
@@ -32,6 +34,9 @@ class Bureaucrat {
 
         void        incrementGrade();
         void        decrementGrade();
+
+        void        signForm(Form const &form);
+        void        executeForm(Form const & form);
 
         class GradeTooHighException : public std::exception{
             public:
@@ -52,5 +57,3 @@ class Bureaucrat {
 };
 
 std::ostream &		operator << ( std::ostream & o, Bureaucrat const & i );
-
-#endif

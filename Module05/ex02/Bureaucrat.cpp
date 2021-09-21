@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/02 11:42:45 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/21 19:13:37 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,27 @@ void Bureaucrat::decrementGrade()
         throw Bureaucrat::GradeTooLowException();
 	else
         this->_grade += 1;
+}
+
+void Bureaucrat::signForm(Form const &form)
+{
+    if (form.getInde())
+        std::cout << this->_name << " signs " << form.getName() << std::endl;
+    else
+        std::cout << this->_name << " cannot sign " << form.getName() << " because." << std::endl;
+}
+
+void Bureaucrat::executeForm(Form const & form)
+{
+    try 
+    {
+        form.execute(*this);
+        std::cout << this->getName() + " execute " + form.getName() << std::endl;
+    }
+    catch (const std::exception &error)
+    {
+        std::cerr << "Cannot execute the form : " << error.what() << std::endl;
+    }
 }
 
 /*

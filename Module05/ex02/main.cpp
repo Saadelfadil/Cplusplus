@@ -11,66 +11,39 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-
+#include "Form.hpp"
+ 
 int main()
 {
-    Bureaucrat* bureaucrat = new Bureaucrat("Bob", 2);
-    Bureaucrat* stagiaire = new Bureaucrat("Cafe", 149);
-    
-    // Test --
+    Bureaucrat bure_a("bure_A", 2);
+    Bureaucrat bure_b("bure_B", 70);
+    Bureaucrat bure_c("bure_C", 139);
+ 
+    Form form_a("form_A", 10, 10);
+    Form form_b("form_B", 71, 10);
+    Form form_c("form_C", 130, 140);
     try
     {
-        std::cout << *bureaucrat;
-        bureaucrat->incrementGrade();
-        std::cout << bureaucrat->getName() << " upgraded ! Felicitations! " << std::endl;
-        std::cout << *bureaucrat;
-        bureaucrat->incrementGrade();
-        std::cerr << "[+][1] Exception does'nt work nicely. " << std::endl;
+        bure_a.signForm(form_a);
     }
-    catch (std::exception & e)
+    catch(const std::exception& e)
     {
-        std::cerr << "[1] Exception : " << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
-
-    // Test ++
     try
     {
-        std::cout << *stagiaire;
-        stagiaire->decrementGrade();
-        std::cout << stagiaire->getName() << " downgraded ! That's suck! " << std::endl;
-        std::cout << *stagiaire;
-        stagiaire->decrementGrade();
-        std::cerr << "[+][2] Exception does'nt work nicely. " << std::endl;
+        bure_b.signForm(form_b);
     }
-    catch (std::exception & e)
+    catch(const std::exception& e)
     {
-        std::cerr << "[2] Exception : " << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
-
-    Bureaucrat* toHigh;
-    Bureaucrat* toLow;
-
-    // Test ToHigh
     try
     {
-        toHigh = new Bureaucrat("ToHigh", 0);
-        std::cerr << "[+][3] Exception does'nt work nicely. " << std::endl;
+        bure_c.signForm(form_c);
     }
-    catch (std::exception & e)
+    catch(const std::exception& e)
     {
-        std::cerr << "[3] Exception : " << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
-    
-    try
-    {
-        toLow = new Bureaucrat("ToLow", 420);
-        std::cerr << "[+][4] Exception does'nt work nicely. " << std::endl;
-    }
-    catch (std::exception & e)
-    {
-        std::cerr << "[4] Exception : " << e.what() << std::endl;
-    }
-    
-    delete bureaucrat;
-    delete stagiaire;
 }

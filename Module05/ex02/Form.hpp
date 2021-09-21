@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/02 18:29:25 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/21 18:54:14 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <string>
+# include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form {
     private :
@@ -23,17 +26,20 @@ class Form {
         const int _gradeSign;
         const int _gradeExec;
     public :
-        virtual ~Form();
         Form();
-        Form(std::string name, bool inde,const int gradeSign, const int gradeExec);
+        virtual ~Form();
+        Form(std::string name, const int gradeSign, const int gradeExec);
         Form(Form const &obj);
         Form & operator = (Form const &obj);
 
-        const std::string getName() const;
-        int         getGradeSign() const;
-        const int         getInde() const;
-        const int         getGradeSign() const;
+        const std::string   getName() const;
+        bool                getInde() const;
+        int                 getGradeSign() const;
+        int                 getGradeExec() const;
+        void                beSigned(Bureaucrat &bureau);
 
+        virtual void		execute( Bureaucrat const & executor ) const = 0;
+        
         class GradeTooHighException : public std::exception{
             public:
                 const char *what() const throw();
@@ -49,6 +55,10 @@ class Form {
 				GradeTooLowException (const GradeTooLowException&) throw();
 				GradeTooLowException& operator= (const GradeTooLowException&) throw();
 				virtual ~GradeTooLowException() throw();
+        };
+        class FormNotSigned : public std::exeption{
+            public:
+                const char *what() const throw();
         };
 };
 
