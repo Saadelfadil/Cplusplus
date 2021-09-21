@@ -26,7 +26,7 @@ Form::Form(const std::string name, const int gradeSign, const int gradeExec) : _
 
 // Form::Form()
 // {
-// 	std::cout << "Hello form the Constructor" << std::endl;
+// 	std::cout << "Hello form the CONSTRUCTOR" << std::endl;
 // }
 
 Form::Form(Form const &obj) : _inde(false), _gradeSign(obj._gradeSign), _gradeExec(obj._gradeExec)
@@ -77,12 +77,14 @@ int Form::getGradeExec() const
 	return (this->_gradeExec);
 }
 
-void Form::beSigned(Bureaucrat &bureau)
+Form & Form::beSigned(Bureaucrat &bureau)
 {
 	if (bureau.getGrade() > this->_gradeSign)
         throw Form::GradeTooLowException();
 	this->_inde = true;
+	return *this;
 }
+
 
 /*
 ** --------------------------------- EXCEPTIONS ----------------------------------

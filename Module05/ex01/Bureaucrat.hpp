@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_H
-# define BUREAUCRAT_H
+#pragma once
 
 # include <iostream>
 # include <string>
+# include "Form.hpp"
 
 class Form;
 
@@ -35,6 +35,8 @@ class Bureaucrat {
         void        incrementGrade();
         void        decrementGrade();
 
+        void        signForm(Form const &form);
+
         class GradeTooHighException : public std::exception{
             public:
                 const char *what() const throw();
@@ -54,5 +56,3 @@ class Bureaucrat {
 };
 
 std::ostream &		operator << ( std::ostream & o, Bureaucrat const & i );
-
-#endif
