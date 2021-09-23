@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 16:25:25 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/22 10:11:04 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/23 16:53:44 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iomanip>
 #include <stdexcept>
 #include <fstream>
+#include <cstdlib>
 #include "Form.hpp"
 
 class RobotomyRequestForm : public Form

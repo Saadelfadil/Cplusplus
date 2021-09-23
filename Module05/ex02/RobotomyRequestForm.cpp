@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 10:11:22 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/23 10:12:36 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/23 16:54:32 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
 
 RobotomyRequestForm & RobotomyRequestForm::operator = ( RobotomyRequestForm const &obj)
 {
-    if (this != &obj)
-		this->_target = obj._target;
+    (void)(obj);
     return *this;
 }
 
@@ -61,11 +60,12 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	else if (this->getInde() == false)
 		throw Form::FormNotSigned();
     else {
-        std::cout << "Makes some drilling noises\n";
+        srand(std::time(0));
         if (rand() % 2 == 1)
             std::cout << this->getTarget() << " has been robotomized successfully\n";
         else
-            std::cout << this->getTarget() << "Faillure\n";
+            std::cout << "Makes some drilling noises\n";
+
     }
 }
 

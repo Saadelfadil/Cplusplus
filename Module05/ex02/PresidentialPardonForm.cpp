@@ -40,8 +40,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 PresidentialPardonForm & PresidentialPardonForm::operator = ( PresidentialPardonForm const &obj)
 {
-    if (this != &obj)
-		this->_target = obj._target;
+    (void)(obj);
     return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/23 10:12:42 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/23 16:56:53 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137), _target(target)
 {
+	std::cout << "Hello from the CONSTRUCTOR" << std::endl;
 }
 
 
@@ -40,9 +41,8 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 ShrubberyCreationForm & ShrubberyCreationForm::operator = ( ShrubberyCreationForm const &obj)
 {
-    if (this != &obj)
-		this->_target = obj._target;
-    return *this;
+		(void)(obj);
+		return *this;
 }
 
 /*
@@ -51,7 +51,7 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator = ( ShrubberyCreationFor
 
 std::string ShrubberyCreationForm::getTarget() const
 {
-    return this->_target;
+		return this->_target;
 }
 
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
@@ -62,38 +62,38 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 		throw Form::FormNotSigned();
 	else
 	{
-        std::ofstream ofs(this->getTarget() + "_shrubbery");
-        ofs << "                                                .\n";
-        ofs << "                                     .         ;  \n";
-        ofs << "        .              .              ;%     ;;   \n";
-        ofs << "          ,           ,                :;%  %;   \n";
-        ofs << "           :         ;                   :;%;'     .,   \n";
-        ofs << "  ,.        %;     %;            ;        %;'    ,;\n";
-        ofs << "    ;       ;%;  %%;        ,     %;    ;%;    ,%'\n";
-        ofs << "     %;       %;%;      ,  ;       %;  ;%;   ,%;' \n";
-        ofs << "      ;%;      %;        ;%;        % ;%;  ,%;'\n";
-        ofs << "       `%;.     ;%;     %;'         `;%%;.%;'\n";
-        ofs << "        `:;%.    ;%%. %@;        %; ;@%;%'\n";
-        ofs << "           `:%;.  :;bd%;          %;@%;'\n";
-        ofs << "             `@%:.  :;%.         ;@@%;'   \n";
-        ofs << "               `@%.  `;@%.      ;@@%;         \n";
-        ofs << "                 `@%%. `@%%    ;@@%;        \n";
-        ofs << "                   ;@%. :@%%  %@@%;       \n";
-        ofs << "                     %@bd%%%bd%%:;     \n";
-        ofs << "                       #@%%%%%:;;\n";
-        ofs << "                       %@@%%%::;\n";
-        ofs << "                       %@@@%(o);  . '         \n";
-        ofs << "                       %@@@o%;:(.,'         \n";
-        ofs << "                   `.. %@@@o%::;         \n";
-        ofs << "                      `)@@@o%::;         \n";
-        ofs << "                       %@@(o)::;        \n";
-        ofs << "                      .%@@@@%::;         \n";
-        ofs << "                      ;%@@@@%::;.          \n";
-        ofs << "                     ;%@@@@%%:;;;. \n";
-        ofs << "                 ...;%@@@@@%%:;;;;,..    Saad El fadil\n";
-        ofs.close();
+				std::ofstream ofs(this->getTarget() + "_shrubbery");
+				ofs << "                                                .\n";
+				ofs << "                                     .         ;  \n";
+				ofs << "        .              .              ;%     ;;   \n";
+				ofs << "          ,           ,                :;%  %;   \n";
+				ofs << "           :         ;                   :;%;'     .,   \n";
+				ofs << "  ,.        %;     %;            ;        %;'    ,;\n";
+				ofs << "    ;       ;%;  %%;        ,     %;    ;%;    ,%'\n";
+				ofs << "     %;       %;%;      ,  ;       %;  ;%;   ,%;' \n";
+				ofs << "      ;%;      %;        ;%;        % ;%;  ,%;'\n";
+				ofs << "       `%;.     ;%;     %;'         `;%%;.%;'\n";
+				ofs << "        `:;%.    ;%%. %@;        %; ;@%;%'\n";
+				ofs << "           `:%;.  :;bd%;          %;@%;'\n";
+				ofs << "             `@%:.  :;%.         ;@@%;'   \n";
+				ofs << "               `@%.  `;@%.      ;@@%;         \n";
+				ofs << "                 `@%%. `@%%    ;@@%;        \n";
+				ofs << "                   ;@%. :@%%  %@@%;       \n";
+				ofs << "                     %@bd%%%bd%%:;     \n";
+				ofs << "                       #@%%%%%:;;\n";
+				ofs << "                       %@@%%%::;\n";
+				ofs << "                       %@@@%(o);  . '         \n";
+				ofs << "                       %@@@o%;:(.,'         \n";
+				ofs << "                   `.. %@@@o%::;         \n";
+				ofs << "                      `)@@@o%::;         \n";
+				ofs << "                       %@@(o)::;        \n";
+				ofs << "                      .%@@@@%::;         \n";
+				ofs << "                      ;%@@@@%::;.          \n";
+				ofs << "                     ;%@@@@%%:;;;. \n";
+				ofs << "                 ...;%@@@@@%%:;;;;,..    Saad El fadil\n";
+				ofs.close();
+	}
 }
-
 
 /*
 ** --------------------------------- EXCEPTIONS ----------------------------------
