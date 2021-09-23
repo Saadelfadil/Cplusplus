@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/21 18:52:51 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/23 10:12:42 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,3 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 ** --------------------------------- ACCESSOR ---------------------------------
 */
 
-std::ostream	&operator<<(std::ostream & out, const ShrubberyCreationForm &obj)
-{
-	out << obj.getName() << ", bureaucrat grade " << obj.getInde() << " grade to sign : "<< obj.getGradeSign() << ", grade to exec : " << obj.getGradeExec() << std::endl;
-	return (out);
-}

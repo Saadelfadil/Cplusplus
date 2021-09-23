@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/21 19:13:37 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/23 10:10:44 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void Bureaucrat::executeForm(Form const & form)
     try 
     {
         form.execute(*this);
-        std::cout << this->getName() + " execute " + form.getName() << std::endl;
+        std::cout << this->getName() + " executes " + form.getName() << std::endl;
     }
     catch (const std::exception &error)
     {
