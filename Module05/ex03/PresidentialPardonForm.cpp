@@ -18,6 +18,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target) : Form("PresidentialPardonForm", 25, 5), _target(target)
 {
+	std::cout << "Hello form the Default CONSTRUCTOR [PresidentialPardonForm]" << std::endl;
 }
 
 
@@ -32,6 +33,7 @@ PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &obj
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
+	std::cout << "Hello form the DESTRUCTOR [PresidentialPardonForm]" << std::endl;
 }
 
 /*
@@ -58,9 +60,11 @@ void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	if (executor.getGrade() > this->getGradeExec())
 		throw Form::GradeTooLowException();
 	else if (this->getInde() == false)
+	{
 		throw Form::FormNotSigned();
-    else
-        std::cout << this->getTarget() <<" has been pardoned by Zafod Beeblebrox. \n";
+	}
+	else
+        std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox. \n";
 }
 
 

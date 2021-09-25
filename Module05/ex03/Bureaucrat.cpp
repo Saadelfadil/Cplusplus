@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/23 10:10:44 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/25 10:20:36 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
+	std::cout << "Hello form the Default CONSTRUCTOR [Bureaucrat]" << std::endl;
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
     else if (grade > 150)
@@ -42,6 +43,7 @@ Bureaucrat::Bureaucrat(Bureaucrat const &obj)
 
 Bureaucrat::~Bureaucrat()
 {
+	std::cout << "Hello form the DESTRUCTOR [Bureaucrat]" << std::endl;
 }
 
 /*

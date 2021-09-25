@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/22 10:11:22 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/23 16:54:32 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/25 10:34:53 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : Form("RobotomyRequestForm", 72, 45), _target(target)
 {
+	std::cout << "Hello form the Default CONSTRUCTOR [RobotomyRequestForm]" << std::endl;
 }
 
 
@@ -32,6 +33,7 @@ RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &obj)
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
+	std::cout << "Hello form the DESTRUCTOR [RobotomyRequestForm]" << std::endl;
 }
 
 /*
@@ -61,11 +63,11 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 		throw Form::FormNotSigned();
     else {
         srand(std::time(0));
+        std::cout << "---- Makes some drilling noises ----" << std::endl;
         if (rand() % 2 == 1)
             std::cout << this->getTarget() << " has been robotomized successfully\n";
         else
-            std::cout << "Makes some drilling noises\n";
-
+            std::cout << "Faillure\n";
     }
 }
 

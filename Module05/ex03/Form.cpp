@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/21 18:34:39 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/25 10:54:48 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 Form::Form() : _name(NULL), _gradeSign(0), _gradeExec(0)
 {
 	this->_inde = false;
-	std::cout << "Hello form the Default CONSTRUCTOR" << std::endl;
 }
 
 Form::Form(const std::string name, const int gradeSign, const int gradeExec) : _name(name), _inde(false), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
+	std::cout << "Hello form the Default CONSTRUCTOR [Form]" << std::endl;
     if (gradeSign < 1 || gradeExec < 1)
         throw Form::GradeTooHighException();
     else if (gradeSign > 150 || gradeExec > 150)
@@ -42,6 +42,7 @@ Form::Form(Form const &obj) : _inde(false), _gradeSign(obj._gradeSign), _gradeEx
 
 Form::~Form()
 {
+	std::cout << "Hello form the DESTRUCTOR [Form]" << std::endl;
 }
 
 /*

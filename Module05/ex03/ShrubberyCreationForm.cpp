@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/23 16:56:53 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/25 09:41:46 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137), _target(target)
 {
-	std::cout << "Hello from the CONSTRUCTOR" << std::endl;
+	std::cout << "Hello from the CONSTRUCTOR [ShrubberyCreationForm]" << std::endl;
 }
 
 
@@ -33,6 +33,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &obj)
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
+	std::cout << "Hello form the DESTRUCTOR [ShrubberyCreationForm]" << std::endl;
 }
 
 /*
