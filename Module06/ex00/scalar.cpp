@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 18:14:06 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/27 10:46:06 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/27 15:03:06 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,14 @@
 ** ------------------------------- CONSTRUCTOR --------------------------------
 */
 
-Scalar::Scalar(std::string value) : _value(value)
+Scalar::Scalar(std::string value)
 {
+    if (!std::isdigit(value[0]) && value.length() == 1)
+    {
+        int c = value[0];
+        value = std::to_string(c);
+    }
+    this->_value = value;
 }
 
 Scalar::Scalar()
@@ -64,12 +70,24 @@ void Scalar::setValue(std::string value)
 
 Scalar::operator char()
 {
-    int i = std::stoi(this->_value);
-    if (std::isprint(i))
-        std::cout << "char: '" << static_cast<char>(i) << "'\n";
-    else
-        throw Scalar::noDisplay();
-    return 0;
+	try
+	{
+		char c = std::stoi(this->_value);
+		if (std::isprint(c))
+		    std::cout << "char: '" << c << "'"<< std::endl;
+		else
+            throw Scalar::noDisplay();
+		return c;
+	}
+    catch (const noDisplay &e)
+    {
+        std::cerr << e.what();
+    }
+	catch(const std::exception& e)
+	{
+		std::cout<< "char: impossible" << '\n';
+	}
+	return 0;
 }
 
 Scalar::operator int()
@@ -109,7 +127,7 @@ Scalar::operator double()
 {
 	try
     {
-        double i = std::stoi(this->_value);
+        double i = std::stod(this->_value);
         if (i != (int)i)
 			std::cout << "double: " << i << "\n";
 		else
@@ -123,13 +141,13 @@ Scalar::operator double()
     return 0;
 }
 
-void Scalar::printValues(Scalar const &scal)
+void Scalar::printValues()
 {
-    std::cout << scal._value << std::endl;
+    char charValue = static_cast<char>(*this);
     int intValue = static_cast<int>(*this);
     float floatValue = static_cast<float>(*this);
     double doubleValue = static_cast<double>(*this);
-    (void)intValue, (void)doubleValue, (void)floatValue;
+    (void)charValue, (void)intValue, (void)doubleValue, (void)floatValue;
 }
 
 /*

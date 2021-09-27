@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/27 09:56:27 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/27 13:02:17 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+#include <cctype>
 
 class Scalar {
     private:
@@ -27,7 +28,7 @@ class Scalar {
         Scalar & operator = (Scalar const &obj);
         std::string getValue() const;
         void setValue(std::string value);
-        void printValues(Scalar const &scal);
+        void printValues();
         
         class noDisplay : public std::exception{
             public:
