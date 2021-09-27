@@ -6,13 +6,13 @@
 #    By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/03 11:16:32 by sel-fadi          #+#    #+#              #
-#    Updated: 2021/09/01 15:03:52 by sel-fadi         ###   ########.fr        #
+#    Updated: 2021/09/27 09:59:08 by sel-fadi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME=scalar
 
-SRC = scalar.cpp scalar.cpp
+SRC = scalar.cpp main.cpp
 
 all: $(NAME)
 

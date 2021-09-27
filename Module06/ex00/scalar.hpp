@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/26 16:33:27 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/27 09:56:27 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,13 @@ class Scalar {
         Scalar(Scalar const &obj);
         Scalar & operator = (Scalar const &obj);
         std::string getValue() const;
-        void setValue(std::string value) const;
-        void printValues(Scalar &scal);
+        void setValue(std::string value);
+        void printValues(Scalar const &scal);
+        
+        class noDisplay : public std::exception{
+            public:
+                const char *what() const throw();
+        };
         
         operator  char();
         operator  int();
