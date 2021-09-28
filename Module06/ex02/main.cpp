@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 12:55:38 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/28 12:10:50 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/28 14:58:29 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ Base * generate(void)
         Base *baseC = dynamic_cast<Base *>(childC);
         return (baseC);
     }
+}
+
+void identify(Base* p)
+{
+    
 }
 
 int main()
