@@ -6,48 +6,38 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 12:55:38 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/28 11:28:51 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/28 12:10:50 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Base.hpp"
 
-typedef struct Data
+Base * generate(void)
 {
-    std::string name;
-    int age;
-    char gender;
-	bool active;
-} t_data;
-
-uintptr_t serialize(t_data* data)
-{
-    return (reinterpret_cast<uintptr_t>(data));
-}
-
-Data* deserialize(uintptr_t raw)
-{
-    return reinterpret_cast<t_data *>(raw);
+    srand(time(NULL));
+    
+	int	randValue = rand() % 3;
+    if (randValue == 1)
+    {
+        A *childA = new A();
+        Base *baseA = dynamic_cast<Base *>(childA);
+        return (baseA);
+    }
+    else if (randValue == 2)
+    {
+        B *childB = new B();
+        Base *baseB = dynamic_cast<Base *>(childB);
+        return (baseB);    
+    }
+    else
+    {
+        C *childC = new C();
+        Base *baseC = dynamic_cast<Base *>(childC);
+        return (baseC);
+    }
 }
 
 int main()
 {
-	t_data *data = new t_data;
-	t_data *data2 = NULL;
-	uintptr_t u;
-
-	data->name = "saad";
-    data->age = 22;
-    data->gender = 'M';
-    data->active = true;
-	
-	u = serialize(data);
-	
-	data2 = deserialize(u);
-	
-	std::cout << data2->name << std::endl;
-	std::cout << data2->age << std::endl;
-	std::cout << data2->gender << std::endl;
-	std::cout << data2->active << std::endl;
-	
+    // Base *curr = generate();
 }
