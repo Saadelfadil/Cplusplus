@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 12:55:38 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/28 11:28:51 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/29 08:54:27 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,4 @@ int main()
 	std::cout << data2->age << std::endl;
 	std::cout << data2->gender << std::endl;
 	std::cout << data2->active << std::endl;
-	
 }

@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 12:55:38 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/28 14:58:29 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/28 18:45:17 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,51 @@ Base * generate(void)
 
 void identify(Base* p)
 {
+    if (dynamic_cast<A*>(p))
+        std::cout << "A\n";
+    else if (dynamic_cast<B*>(p))
+        std::cout << "B\n";
+    else if (dynamic_cast<C*>(p))
+        std::cout << "C\n";
+    else
+		;
+}
+
+
+void identify(Base& p)
+{
+    try
+    {
+        A &a = dynamic_cast<A&>(p);
+        std::cout << "A\n";
+        (void)a;
+    }
+    catch(const std::exception& e)
+    {
+        try
+        {
+            B &b = dynamic_cast<B&>(p);
+            std::cout << "B\n";
+            (void)b;
+        }
+        catch(const std::exception& e)
+        {
+            try
+            {
+                C &c = dynamic_cast<C&>(p);
+                std::cout << "C\n";
+                (void)c;
+            }
+            catch(const std::exception& e)
+            {
+            }
+        }
+    }
     
 }
 
 int main()
 {
-    // Base *curr = generate();
+    Base *curr = generate();
+    identify(*curr);
 }
