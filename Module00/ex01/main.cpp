@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:38:40 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/29 08:55:51 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/29 08:56:50 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,7 +171,7 @@ void print_Contact(MyContact *list_contact, int i)
     std::cout << "Index : ";
     getline(std::cin, cmd);
     if (cmd.size() == 0)
-        std::cout << "Index error can you give a digit please" << std::endl;
+        std::cout << "Index error can you give a digit please " << std::endl;
     else if (string_isdigit(cmd))
     {
         index = stoi(cmd);
