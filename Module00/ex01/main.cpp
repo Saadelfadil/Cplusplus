@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:38:40 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/04/03 17:39:18 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/29 08:55:51 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 MyContact::MyContact()
 {
-
     this->firstName = "";
     this->lastName = "";
     this->nickName = "";

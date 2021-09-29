@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 15:38:54 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/04/02 15:38:55 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/29 08:55:36 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,5 @@ int main(int argc, char *argv[]) {
         std::cout << "\n";
     }
     else
-    {
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << "\n";
-    }
 }

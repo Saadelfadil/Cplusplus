@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 16:51:28 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/04/03 17:39:06 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/29 08:55:47 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void MyContact::print_list_contact()
 {
-
     std::cout << "First Name : " << this->firstName << std::endl;
     std::cout << "Last Name : " << this->lastName << std::endl;
     std::cout << "Nickname : " << this->nickName << std::endl;
