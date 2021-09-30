@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/30 12:15:29 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/30 12:25:20 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ class Array
 
 		~Array()
 		{
-			delete [] this->_array;
+			if (this->_array != NULL)
+				delete [] this->_array;
 		};
 
 		Array &operator = (Array<A> const &obj)
@@ -80,18 +81,19 @@ class Array
 			return (this->_array);
 		};
 		
-		unsigned int	getN() const { 
+		unsigned int	getN() const
+		{ 
 			return (this->_n);
 		};
 
 		class outOfLimits : public std::exception
-            {
-                public:
-                    const char *what() const throw()
-                    {
-                        return "Out of limits.";
-                    }
-            };
+		{
+			public:
+				const char *what() const throw()
+				{
+					return "Out of limits.";
+				}
+		};
 };
 
 #endif
