@@ -6,18 +6,17 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/05 12:55:38 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/29 16:47:54 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/30 11:42:26 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#include "Array.hpp"
 
 int main( void )
 {
-	int array[5] = {0, 1, 2, 3, 4};
-	iter<int>(array, 5, printElement);
-	std::cout << "------------------" << std::endl;
-	std::string array2[5] = {"Saad", "Hicham", "Alae", "Achraf", "Hafid"};
-	::iter<std::string>(array2, 5, printElement);
+	Array<int> mini(4);
+	// std::cout << mini[0] << std::endl;
+	std::cout << mini.getN() << std::endl;
+	// std::cout << mini[1] << std::endl;
 	return 0;
 }

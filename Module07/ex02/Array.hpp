@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/29 16:50:48 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/30 12:15:29 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,81 @@
 # include <string>
 #include <cctype>
 
-template <typename S>
-void printElement(S &element)
-{
-    std::cout << element << std::endl;
-}
+template <class A>
 
-template <typename S>
-void iter(S *array, int size, void (*eachElement)(S &element))
+class Array
 {
-    for (int i = 0; i < size; i++)
-        eachElement(array[i]);
-}
+	private:
+		A *_array;
+		unsigned int _n;
+	public:
+		Array( void )
+		{
+			this->_array = new A[0];
+			this->_n = 0;
+		};
+
+		Array(unsigned int n)
+		{
+			this->_array = new A[n]();
+			this->_n = n;
+		};
+
+		Array(Array<A> const &cpy)
+		{
+			this->_array = new A[0];
+			*this = cpy;
+		};
+
+		~Array()
+		{
+			delete [] this->_array;
+		};
+
+		Array &operator = (Array<A> const &obj)
+		{
+			if (this != &obj)
+			{
+				if (this->_array != NULL)
+					delete [] this->_array;
+				this->_array = new A[obj._n];
+				this->_n = obj._n;
+				for (unsigned int i = 0; i < this->_n; i++)
+					this->_array[i] = obj._array[i];
+			}
+			return *this;
+		};
+
+		A	&operator[](unsigned int idx)
+		{
+			if (idx <= (this->_n - 1))
+				return this->_array[idx];
+			else
+				throw outOfLimits();
+		};
+		
+		unsigned int size()
+		{
+			return (this->_n);
+		};
+
+		A getArray() const
+		{
+			return (this->_array);
+		};
+		
+		unsigned int	getN() const { 
+			return (this->_n);
+		};
+
+		class outOfLimits : public std::exception
+            {
+                public:
+                    const char *what() const throw()
+                    {
+                        return "Out of limits.";
+                    }
+            };
+};
 
 #endif
