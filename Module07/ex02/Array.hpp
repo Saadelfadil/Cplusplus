@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/09/30 12:25:20 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/09/30 12:53:17 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Array
 {
 	private:
 		A *_array;
-		unsigned int _n;
+		int _n;
 	public:
 		Array( void )
 		{
@@ -57,15 +57,15 @@ class Array
 					delete [] this->_array;
 				this->_array = new A[obj._n];
 				this->_n = obj._n;
-				for (unsigned int i = 0; i < this->_n; i++)
+				for (int i = 0; i < this->_n; i++)
 					this->_array[i] = obj._array[i];
 			}
 			return *this;
 		};
 
-		A	&operator[](unsigned int idx)
+		A	&operator[](int idx)
 		{
-			if (idx <= (this->_n - 1))
+			if ((idx < this->_n) && (idx >= 0))
 				return this->_array[idx];
 			else
 				throw outOfLimits();
