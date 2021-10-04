@@ -39,4 +39,6 @@ class Span
 		};
 };
 
+// std::ostream &operator << (std::ostream& output, Span const &obj);
+
 #endif

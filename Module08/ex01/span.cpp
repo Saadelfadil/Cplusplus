@@ -51,35 +51,23 @@ Span & Span::operator = (Span const &obj)
 
 void Span::addNumber(unsigned int n)
 {
-    for (unsigned int i = 0; i < this->_array.size(); i++)
-    {
-        if (i == this->_N)
-            throw Span::alreadyStored();
-        else
-            this->_array.push_back(n);
-    }
+    if (this->_array.size() == this->_N)
+        throw alreadyStored();
+    this->_array.push_back(n);
+
 }
 
 int Span::shortestSpan()
 {
-    // int tmp;
-    // sort(this->_array, this->_N);
-    // for (unsigned int i; i < this->_array.size(); i++)
-    // {
-    //     tmp = this->_array[++i] - this->_array[i];
-    //     if (tmp < (this->_array[++i] - this->_array[i]))
-    //         tmp = this->_array[++i] - this->_array[i];
-    //     return tmp;
-    // }
-    int tmp;
-    sort(this->_array, this->_N);
-    for (auto i = this->_array.begin(
-        
-    ); i < this->_array.size(); i++)
-    {
-        std::cout << this->_array
-    }
-
+   	unsigned int ret;
+	std::sort(this->_array.begin(), this->_array.end());
+	for (size_t i = 1; i < this->_array.size(); i++)
+	{
+		unsigned int v = _array.at(i) - _array.at(i - 1);
+		if (v < ret)
+			ret = v;
+	}
+	return ret;
 }
 
 /*
@@ -94,3 +82,8 @@ const char* Span::alreadyStored::what() const throw()
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
+// std::ostream &operator << (std::ostream& output, Span const &obj)
+// {
+//     output << (void)obj << std::endl;
+// 	return (output);
+// }

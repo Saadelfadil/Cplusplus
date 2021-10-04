@@ -15,6 +15,11 @@
 
 int main( void )
 {
-	
+	Span spa(3);
+	spa.addNumber(5);
+	spa.addNumber(10);
+	spa.addNumber(18);
+
+	std::cout << spa.shortestSpan() << std::endl;
 	return 0;
 }
