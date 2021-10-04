@@ -18,13 +18,16 @@ int main( void )
 
 	try
     {
-		Span sp = Span(5);
-		sp.addNumber(5);
-		sp.addNumber(3);
-		sp.addNumber(17);
-		sp.addNumber(9);
-		sp.addNumber(11);
-
+		std::srand(time(NULL));
+		Span sp = Span(60);
+		for (unsigned int i = 0; i < 60; i++)
+			sp.addNumber(std::rand());
+		// sp.addNumber(5);
+		// sp.addNumber(3);
+		// sp.addNumber(17);
+		// sp.addNumber(9);
+		// sp.addNumber(11);
+		// sp.addNumberRandom(2);
 		std::cout << sp.shortestSpan() << std::endl;
 		std::cout << sp.longestSpan() << std::endl;
     }
@@ -32,6 +35,5 @@ int main( void )
     {
         std::cerr << e.what() << '\n';
     }
-
 	return 0;
 }

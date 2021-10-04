@@ -77,6 +77,19 @@ int Span::longestSpan()
 	return longestOne;
 }
 
+// void Span::addNumberRandom(unsigned int n)
+// {
+// 	srand(time(NULL));
+// 	unsigned int size = this->_array.size();
+// 	for (unsigned int i = 0; i < n; i++)
+// 	{
+// 		if (size + i < this->_N)
+// 			this->_array.push_back(rand());
+// 		else
+// 			throw vectorFull();
+// 	}
+// }
+
 /*
 ** --------------------------------- EXCEPTIONS ----------------------------------
 */
@@ -88,7 +101,7 @@ const char* Span::vectorFull::what() const throw()
 
 const char * Span::vectorEmpty::what() const throw()
 {
-	return "error: Empty vector or just 1 element.";
+	return "error : Empty vector or just 1 element.";
 }
 
 /*

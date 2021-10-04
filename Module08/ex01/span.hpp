@@ -33,6 +33,7 @@ class Span
         
         int shortestSpan();
         int longestSpan();
+        void addNumberRandom(unsigned int n);
         class vectorFull : public std::exception
 		{
 			public:
