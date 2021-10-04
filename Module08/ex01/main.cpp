@@ -15,11 +15,23 @@
 
 int main( void )
 {
-	Span spa(3);
-	spa.addNumber(5);
-	spa.addNumber(10);
-	spa.addNumber(18);
 
-	std::cout << spa.shortestSpan() << std::endl;
+	try
+    {
+		Span sp = Span(5);
+		sp.addNumber(5);
+		sp.addNumber(3);
+		sp.addNumber(17);
+		sp.addNumber(9);
+		sp.addNumber(11);
+
+		std::cout << sp.shortestSpan() << std::endl;
+		std::cout << sp.longestSpan() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+
 	return 0;
 }

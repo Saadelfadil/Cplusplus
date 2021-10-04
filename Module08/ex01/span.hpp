@@ -32,7 +32,13 @@ class Span
         void addNumber(unsigned int n);
         
         int shortestSpan();
-        class alreadyStored : public std::exception
+        int longestSpan();
+        class vectorFull : public std::exception
+		{
+			public:
+				const char *what() const throw();
+		};
+        class vectorEmpty : public std::exception
 		{
 			public:
 				const char *what() const throw();

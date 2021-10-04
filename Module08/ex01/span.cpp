@@ -52,31 +52,43 @@ Span & Span::operator = (Span const &obj)
 void Span::addNumber(unsigned int n)
 {
     if (this->_array.size() == this->_N)
-        throw alreadyStored();
+        throw vectorFull();
     this->_array.push_back(n);
-
 }
 
 int Span::shortestSpan()
 {
-   	unsigned int ret;
+   	unsigned int shortOne;
 	std::sort(this->_array.begin(), this->_array.end());
 	for (size_t i = 1; i < this->_array.size(); i++)
 	{
-		unsigned int v = _array.at(i) - _array.at(i - 1);
-		if (v < ret)
-			ret = v;
+		unsigned int tmp = _array.at(i) - _array.at(i - 1);
+		if (tmp < shortOne)
+			shortOne = tmp;
 	}
-	return ret;
+	return shortOne;
+}
+
+int Span::longestSpan()
+{
+   	unsigned int longestOne;
+	std::sort(this->_array.begin(), this->_array.end());
+	longestOne = _array.at(this->_N - 1) - _array.at(0);
+	return longestOne;
 }
 
 /*
 ** --------------------------------- EXCEPTIONS ----------------------------------
 */
 
-const char* Span::alreadyStored::what() const throw()
+const char* Span::vectorFull::what() const throw()
 {
-    return "error : N is Already Stored.";
+    return "error : Vector is full.";
+}
+
+const char * Span::vectorEmpty::what() const throw()
+{
+	return "error: Empty vector or just 1 element.";
 }
 
 /*
