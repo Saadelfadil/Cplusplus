@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/10/05 14:09:53 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/10/05 16:22:21 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Span
 {
     private:
         unsigned int _N;
-        std::vector<int> _array;
+        std::vector<unsigned int> _array;
     public:
         Span(unsigned int n);
         Span(Span const &obj);
