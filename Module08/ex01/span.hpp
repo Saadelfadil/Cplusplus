@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 12:08:16 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/10/04 13:07:40 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/10/05 14:09:53 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ class Span
         Span(Span const &obj);
         Span & operator = (Span const &obj);
         ~Span();
+
         void addNumber(unsigned int n);
-        
         int shortestSpan();
         int longestSpan();
         void addNumberRandom(unsigned int n);
+        
         class vectorFull : public std::exception
 		{
 			public:
@@ -45,7 +46,5 @@ class Span
 				const char *what() const throw();
 		};
 };
-
-// std::ostream &operator << (std::ostream& output, Span const &obj);
 
 #endif

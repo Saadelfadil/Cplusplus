@@ -6,7 +6,7 @@
 /*   By: sel-fadi <sel-fadi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 11:29:57 by sel-fadi          #+#    #+#             */
-/*   Updated: 2021/10/04 13:32:29 by sel-fadi         ###   ########.fr       */
+/*   Updated: 2021/10/05 14:09:28 by sel-fadi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,8 +107,4 @@ const char * Span::vectorEmpty::what() const throw()
 /*
 ** --------------------------------- ACCESSOR ---------------------------------
 */
-// std::ostream &operator << (std::ostream& output, Span const &obj)
-// {
-//     output << (void)obj << std::endl;
-// 	return (output);
-// }
+
